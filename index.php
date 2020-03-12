@@ -15,6 +15,9 @@ if(isset($_GET['action'])){
         case'home':
             home();
             break;
+        case'displayLogin':
+            displayLogin();
+            break;
         default:
             home();
             break;
