@@ -20,7 +20,7 @@ if(isset($_GET['action'])){
             break;
         default:
             home();
-            break;
+
     }
 }
 else{
