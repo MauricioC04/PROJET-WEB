@@ -30,9 +30,15 @@ if(isset($_GET['action'])){
         case'displayCustomerAccount':
             displayCustomerAccount();
             break;
+        case'displayArticleDetails':
+            displayArticleDetails();
+            break;
+        case'displayAddProduct':
+            displayAddProduct();
+            break;
+
         default:
             home();
-
     }
 }
 else{
