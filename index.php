@@ -21,6 +21,12 @@ if(isset($_GET['action'])){
         case'displaySubscription':
             displaySubscription();
             break;
+        case'displayAlbumCD':
+            displayAlbumCD();
+            break;
+        case'displayVinyles':
+            displayVinyles();
+            break;
         default:
             home();
 
