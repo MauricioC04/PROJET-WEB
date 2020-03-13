@@ -27,6 +27,9 @@ if(isset($_GET['action'])){
         case'displayVinyles':
             displayVinyles();
             break;
+        case'displayCustomerAccount':
+            displayCustomerAccount();
+            break;
         default:
             home();
 
