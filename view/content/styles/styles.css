@@ -1,0 +1,62 @@
+@media (min-width: 576px) {
+  .login-dark {
+    min-height: 850px;
+  }
+}
+
+@media (min-width: 768px) {
+  #mainBlock {
+    min-height: 750px;
+  }
+}
+
+@media (min-width: 768px) {
+  #blockInscription {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 768px) {
+  #colDroite {
+    margin-bottom: inherit !important;
+  }
+}
+
+#colgauche {
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #blockRows {
+    min-height: 800px;
+  }
+}
+
+@media (min-width: 768px) {
+  #containerBlock {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  #buttonValidationProduct {
+    display: inherit !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #buttonValidationProductMobile {
+    display: none;
+  }
+}
+
+#buttonValidationProduct {
+  display: none;
+}
+
