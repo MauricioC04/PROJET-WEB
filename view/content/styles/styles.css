@@ -60,3 +60,9 @@
   display: none;
 }
 
+@media (min-width: 992px) {
+  .desktopView {
+    display: table-cell;
+  }
+}
+
