@@ -14,12 +14,12 @@ function home()
 
 function displayLogin()
 {
-    require 'view/login.php';
+    require 'view/displayLogin.php';
 }
 
 function displaySubscription()
 {
-    require 'view/Subscription.php';
+    require 'view/displaySubscription.php';
 }
 
 function displayAlbumCD()
@@ -43,7 +43,7 @@ function displayArticleDetails()
 }
 function displayAddProduct()
 {
-    require 'view/AddProduct.php';
+    require 'view/displayAddProduct.php';
 }
 
 

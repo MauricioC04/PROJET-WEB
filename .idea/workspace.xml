@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="" />
+    <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/displayAddProduct.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controler/controler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/AddProduct.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Subscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displaySubscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/addMusic.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayAddMusic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/administratorDisplayAlbumCD.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayAdministratorDisplayAlbumCD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/confirmationPurchase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/content/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayMusicsArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsProductCustomer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayLogin.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +27,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1ZFZ6Bh8yWH1xFgs5l5c46EyUm3" />
   <component name="ProjectViewState">
@@ -21,10 +39,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/view/content" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projet WEB\SITE-WEB-PRODUCTION\view" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projet WEB\PROJET-WEB-STORM\view\content" />
     </key>
@@ -47,6 +69,8 @@
       <workItem from="1584436625558" duration="65000" />
       <workItem from="1584460828347" duration="315000" />
       <workItem from="1584461182957" duration="8000" />
+      <workItem from="1584461440029" duration="74000" />
+      <workItem from="1584534931224" duration="2396000" />
     </task>
     <servers />
   </component>
@@ -58,25 +82,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1081" y="111" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1584436659026" />
-    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584436662384">
+    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584461451540">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584436662384" />
-    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1584436690261">
+    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584461451540" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1584540354922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584436690261" />
-    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1584436690261">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1584540354922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584436690261" />
-    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1584436690261">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1584540354922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584436690261" />
-    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1584436690261">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1584540354922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584436690261" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584539260454">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584539260454" />
   </component>
 </project>

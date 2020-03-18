@@ -11,7 +11,7 @@ $titre="Art-Music - Accueil";
 ?>
 
 
-<img src="view/content/images/home/titre1.jpg" width="100%" alt="image de présentation">
+<img src="view/content/images/home/titre.jpg" width="100%" alt="image de présentation">
 <div style="padding: 20px;">
     <div class="container">
         <div class="row">

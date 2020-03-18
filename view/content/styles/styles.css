@@ -66,3 +66,53 @@
   }
 }
 
+@media (min-width: 768px) {
+  #btnContinuePurchase {
+    max-width: 320px;
+    margin: inherit;
+  }
+}
+
+@media (min-width: 768px) {
+  #btnConfirmCart {
+    max-width: 320px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 300px) {
+  #btnDesktop {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #btnMobile {
+    display: none!important;
+  }
+}
+
+@media (min-width: 768px) {
+  #btnDesktop {
+    display: inherit;
+  }
+}
+
+@media (min-width: 300px) {
+  #btnMobile {
+    display: inherit;
+  }
+}
+
+@media (min-width: 768px) {
+  #containerInfoProduct {
+    display: inherit;
+  }
+}
+
+@media (min-width: 768px) {
+  #imgProduct {
+    margin-right: 15px;
+  }
+}
+
