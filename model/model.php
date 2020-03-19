@@ -1,13 +1,5 @@
 <?php
-/**
- * Author   : nicolas.glassey@cpnv.ch
- * Project  : 151_2019_ForStudents
- * Created  : 05.02.2019 - 18:40
- *
- * Last update :    [01.12.2018 author]
- *                  [add $logName in function setFullPath]
- * Git source  :    [link]
- */
+
 
 
 
@@ -19,40 +11,77 @@ function SessionOpen(){
 }
 
 
-function IsLoginCorrect($userEmail, $userPsw){
+function isLoginCorrect($userEmail, $userPsw){
 
     $result = false;
 
     $strSeparator = '\'';
-    //$loginQuery = 'SELECT * FROM users WHERE userEmailAddress ='.$strSeparator . $userEmail . $strSeparator . ' and userPsw = ' . $strSeparator . $userPsw . $strSeparator . ';';
-    $loginQuery = 'SELECT * FROM users WHERE userEmailAddress ='.$strSeparator . $userEmail . $strSeparator;
+    $loginQuery = 'SELECT * FROM customers WHERE email ='.$strSeparator . $userEmail . $strSeparator;
     require_once 'BD_base.php';
     echo $loginQuery;
     $queryResult = executeQuerySelect($loginQuery);
 
+    if(count($queryResult) == 0){
+        $loginQuery = 'SELECT * FROM administrators WHERE email ='.$strSeparator . $userEmail . $strSeparator;
+        require_once 'BD_base.php';
+        echo $loginQuery;
+        $queryResult = executeQuerySelect($loginQuery);
+    }
 
     if(count($queryResult) == 1){
-        $userHashPsw = $queryResult[0]['userHashPsw'];
-        $hashPassowrdDebug = password_hash($userPsw, PASSWORD_DEFAULT);
+        $userHashPsw = $queryResult[0]['password'];
+        $hashPasswordDebug = password_hash($userPsw, PASSWORD_DEFAULT);
         $result = password_verify($userPsw, $userHashPsw);
         return $result;
 
     }
 
-
     return $result;
 }
 
 
+function checkCityZip($city, $zip)
+{
+    $result = false;
 
-function registerNewAccount($userEmailAddress, $userPsw){
+    $strSeparator = '\'';
+    $checkQuery = 'SELECT * FROM cities WHERE name ='.$strSeparator . $city . $strSeparator . 'AND zip ='. $zip;
+    require_once 'BD_base.php';
+    echo $checkQuery;
+    $queryResult = executeQuerySelect($checkQuery);
+
+    if(count($queryResult) == 1)
+    {
+        $result = true;
+    }
+
+    return $result;
+}
+
+function getIdCity($zip)
+{
+
+    $getIdZipQuery = 'SELECT id FROM cities WHERE zip ='. $zip;
+    require_once 'BD_base.php';
+    echo $getIdZipQuery;
+    $queryResult = executeQuerySelect($getIdZipQuery);
+
+    return $queryResult[0]['id'];
+
+
+}
+
+
+function registerDB($userName, $userFirstname, $userAddress, $userEmail, $userPassword, $userZip){
     $result = false;
 
     $strSeparator = '\'';
 
-    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
+    $userHashPsw = password_hash($userPassword, PASSWORD_DEFAULT);
 
-    $registerQuery = 'INSERT INTO users (userEmailAddress, userHashPsw) VALUES (' .$strSeparator.$userEmailAddress.$strSeparator. ',' .$strSeparator.$userHashPsw.$strSeparator.');';
+    $userIdZip = getIdCity($userZip);
+
+    $registerQuery = 'INSERT INTO customers (name, firstname, address, email, password, city_id) VALUES ('.$strSeparator.$userName.$strSeparator. ',' .$strSeparator.$userFirstname.$strSeparator. ',' .$strSeparator.$userAddress.$strSeparator. ',' .$strSeparator.$userEmail.$strSeparator. ',' .$strSeparator.$userHashPsw.$strSeparator. ',' .$userIdZip.');';
     echo $registerQuery;
     require_once 'BD_base.php';
     $queryResult = executeQueryIDU($registerQuery);

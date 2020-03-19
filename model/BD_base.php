@@ -20,9 +20,9 @@ $sqlDriver = 'mysql';
 $hostname = 'localhost';
 $port = 3306;
 $charset = 'utf8';
-$dbName = 'snows';
+$dbName = 'bd_ecommerce';
 $userName = 'root';
-$userPwd = '';
+$userPwd = 'Pa$$w0rd';
 $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
 try{

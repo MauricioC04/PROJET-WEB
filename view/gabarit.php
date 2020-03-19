@@ -33,7 +33,11 @@
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayAlbumCD" style="color: rgb(0,176,251);">ALBUM CD</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayVinyles" style="color: rgb(0,176,251);">VINYLES</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayLogin" style="color: rgb(0,176,251);">INSCRIPTION/CONNEXION</a></li>
+                <?php if (isset($_SESSION['userEmailAddress'])) :?>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=logout" style="color: rgb(0,176,251);">DECONNEXION</a></li>
+                <?php else :?>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayLogin" style="color: rgb(0,176,251);"> INSCRIPTION/CONNEXION</a></li>
+                <?php endif ?>
             </ul>
         </div>
     </div>

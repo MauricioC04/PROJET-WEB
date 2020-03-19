@@ -36,6 +36,17 @@ if(isset($_GET['action'])){
         case'displayAddProduct':
             displayAddProduct();
             break;
+            /**/
+        case'login':
+            login($_POST);
+            break;
+        case'logout':
+            logout();
+            break;
+        case'registerNewAccount':
+            registerNewAccount($_POST);
+            break;
+
 
         default:
             home();

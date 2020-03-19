@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/displayAddProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controler/controler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/AddProduct.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/Subscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displaySubscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/addMusic.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayAddMusic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/administratorDisplayAlbumCD.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayAdministratorDisplayAlbumCD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/confirmationPurchase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/content/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayMusicsArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsProductCustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/BD_base.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/BD_base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displaySubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displaySubscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/gabarit.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +35,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/view/content" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/php_xdebug-2.9.3-7.4-vc15-nts-x86_64.dll" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -71,6 +66,10 @@
       <workItem from="1584461182957" duration="8000" />
       <workItem from="1584461440029" duration="74000" />
       <workItem from="1584534931224" duration="2396000" />
+      <workItem from="1584603921320" duration="2157000" />
+      <workItem from="1584606094761" duration="150000" />
+      <workItem from="1584606251780" duration="1330000" />
+      <workItem from="1584621797293" duration="5537000" />
     </task>
     <servers />
   </component>
@@ -78,33 +77,57 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="540" y="174" key="#CLI_Interpreters" timestamp="1584606240191">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="174" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1584606240191" />
     <state x="1081" y="111" key="#PHP" timestamp="1584436659026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1081" y="111" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1584436659026" />
-    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584461451540">
+    <state x="631" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584606172785">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="828" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584461451540" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1584540354922">
+    <state x="631" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584606172785" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1584606238737">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1584540354922">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584606238737" />
+    <state width="1877" height="88" key="GridCell.Tab.0.bottom" timestamp="1584627351562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1584540354922">
+    <state width="1877" height="88" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584627351562" />
+    <state width="1877" height="88" key="GridCell.Tab.0.center" timestamp="1584627351562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1584540354922">
+    <state width="1877" height="88" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584627351562" />
+    <state width="1877" height="88" key="GridCell.Tab.0.left" timestamp="1584627351562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584540354922" />
+    <state width="1877" height="88" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584627351562" />
+    <state width="1877" height="88" key="GridCell.Tab.0.right" timestamp="1584627351562">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="88" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584627351562" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584539260454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584539260454" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1584606240877">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584606240877" />
+    <state x="953" y="0" width="974" height="1047" maximized="true" key="dock-window-1" timestamp="1584627345466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" maximized="true" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1584627345466" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-2" timestamp="1584625450470">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1584625450470" />
+    <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1584622469779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584622469779" />
   </component>
 </project>
