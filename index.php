@@ -15,6 +15,7 @@ if(isset($_GET['action'])){
         case'home':
             home();
             break;
+            /*DISPLAY PAGES*/
         case'displayLogin':
             displayLogin();
             break;
@@ -36,7 +37,7 @@ if(isset($_GET['action'])){
         case'displayAddProduct':
             displayAddProduct();
             break;
-            /**/
+            /*LOGIN - LOGOUT - SUBSCRIPTION*/
         case'login':
             login($_POST);
             break;
@@ -46,7 +47,10 @@ if(isset($_GET['action'])){
         case'registerNewAccount':
             registerNewAccount($_POST);
             break;
-
+            /*CUSTOMER ACCOUNT*/
+        case 'updateDataUser':
+            updateDataUser($_POST);
+            break;
 
         default:
             home();

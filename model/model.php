@@ -11,6 +11,8 @@ function SessionOpen(){
 }
 
 
+/* ################## PART: LOGIN/SUBSCRIPTION ################## */
+
 function isLoginCorrect($userEmail, $userPsw){
 
     $result = false;
@@ -38,7 +40,6 @@ function isLoginCorrect($userEmail, $userPsw){
 
     return $result;
 }
-
 
 function checkCityZip($city, $zip)
 {
@@ -71,8 +72,7 @@ function getIdCity($zip)
 
 }
 
-
-function registerDB($userName, $userFirstname, $userAddress, $userEmail, $userPassword, $userZip){
+function registerDataUserInDB($userName, $userFirstname, $userAddress, $userEmail, $userPassword, $userZip){
     $result = false;
 
     $strSeparator = '\'';
@@ -90,6 +90,85 @@ function registerDB($userName, $userFirstname, $userAddress, $userEmail, $userPa
     }
     return $result;
 }
+
+function checkEmailAlreadyExists($userEmail){
+    $result = false;
+
+    $strSeparator = '\'';
+    $checkQuery = 'SELECT * FROM customers WHERE email ='.$strSeparator . $userEmail . $strSeparator;
+    require_once 'BD_base.php';
+    echo $checkQuery;
+    $queryResult = executeQuerySelect($checkQuery);
+
+    if(count($queryResult) == 1){
+        $result = true;
+    }
+
+    return $result;
+}
+
+
+/* ################## PART: CUSTOMER ACCOUNT ################## */
+
+function getInfosUser($userEmail)
+{
+    $strSeparator = '\'';
+    $getInfosQuery = 'SELECT customers.name, customers.firstname, customers.address, cities.zip, cities.name AS nameCity, customers.email FROM customers INNER JOIN cities ON customers.city_id = cities.id WHERE customers.email ='.$strSeparator . $userEmail . $strSeparator ;
+    require_once 'BD_base.php';
+    echo $getInfosQuery;
+    $queryResult = executeQuerySelect($getInfosQuery);
+
+    return $queryResult;
+}
+
+function updateDataUserInDB($userName, $userFirstname, $userAddress, $userZip, $userEmail){
+    $result = false;
+
+    $strSeparator = '\'';
+
+    $userIdZip = getIdCity($userZip);
+
+    $updateDataUserQuery = 'UPDATE customers SET name='.$strSeparator.$userName.$strSeparator.', firstname='.$strSeparator.$userFirstname.$strSeparator.', address='.$strSeparator.$userAddress.$strSeparator.', city_id='.$strSeparator.$userIdZip.$strSeparator.' WHERE email='.$strSeparator.$userEmail.$strSeparator;
+    echo $updateDataUserQuery;
+    require_once 'BD_base.php';
+    $queryResult = executeQueryIDU($updateDataUserQuery);
+    if($queryResult){
+        $result = $queryResult;
+    }
+    return $result;
+}
+
+function getIdUser($userEmail){
+
+    $strSeparator = '\'';
+
+    $getIdUserQuery = 'SELECT id FROM customers WHERE email ='. $strSeparator.$userEmail.$strSeparator;
+    require_once 'BD_base.php';
+    echo $getIdUserQuery;
+    $queryResult = executeQuerySelect($getIdUserQuery);
+
+    return $queryResult[0]['id'];
+}
+
+function getPreviousOrdersFromDB($userId){
+
+    $getPreviousOrdersQuery = 'SELECT orders.id, orders.orderDate, SUM(articles.price) AS totalCost FROM orders INNER JOIN customers ON orders.customer_id = customers.id INNER JOIN orders_has_articles ON orders_has_articles.Orders_id = orders.id INNER JOIN articles ON orders_has_articles.Articles_id = articles.id WHERE customers.id ='.$userId.' GROUP BY orders.id';
+
+    require_once 'BD_base.php';
+    echo $getPreviousOrdersQuery;
+    $queryResult = executeQuerySelect($getPreviousOrdersQuery);
+
+    return $queryResult;
+}
+
+
+
+
+
+
+
+
+/*OLD EXERCICE EXAMPLES
 
 
 
@@ -154,23 +233,7 @@ if(isset($_SESSION['cart'])) {
 
         return $result;
     }
-}
 
-function getIdUser($userEmail){
-    $strSeparator = '\'';
-    require_once 'BD_base.php';
-    $userIdQuery='SELECT id FROM users WHERE userEmailAddress='.$strSeparator.$userEmail.$strSeparator.';';
-    echo $userIdQuery;
-    $queryResult = executeQuerySelect($userIdQuery);
-
-
-    if(count($queryResult) == 1){
-        foreach ($queryResult as $result){
-            return $result[0];
-        }
-
-    }
-}
 
 function saveLocation($userId){
     $strSeparator = '\'';
@@ -228,5 +291,7 @@ function saveLocation($userId){
             }
         }
     }
+
+    */
 
 ?>

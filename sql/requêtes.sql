@@ -143,7 +143,7 @@ VALUES ("Obama", "Barack", "Rue de la Maison Blanche 78", "b.obama@cpnv.ch", "81
 
 
 --- Récupération des données personnelles (compte client) | Variable > b.obama@cpnv.ch (email stocké dans une variable session)
-SELECT customers.name, customers.firstname, customers.address, cities.zip, cities.name
+SELECT customers.name, customers.firstname, customers.address, cities.zip, cities.name, customers.email
 FROM customers
 INNER JOIN cities
 ON customers.city_id = cities.id

@@ -15,6 +15,9 @@ $titre="Art-Music - Inscription";
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center"><i class="fa fa-pencil-square" style="font-size: 45px;"></i><br>Inscription</h2>
+                <?php if (@$_GET['emailAlreadyExists'] == true) :?>
+                    <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Cet email est déjà utilisé. Veuillez vous connecter avec vos identifiants respectifs</span></h5>
+                <?php endif ?>
                 <?php if (@$_GET['emptyInput'] == true) :?>
                     <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Veuillez remplir tous les champs correctement</span></h5>
                 <?php endif ?>
