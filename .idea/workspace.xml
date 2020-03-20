@@ -4,12 +4,7 @@
     <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controler/controler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/BD_base.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/BD_base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displaySubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displaySubscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/gabarit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/content/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +65,7 @@
       <workItem from="1584606094761" duration="150000" />
       <workItem from="1584606251780" duration="1330000" />
       <workItem from="1584621797293" duration="5537000" />
+      <workItem from="1584690737591" duration="573000" />
     </task>
     <servers />
   </component>

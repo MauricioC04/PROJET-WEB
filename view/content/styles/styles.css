@@ -30,6 +30,12 @@
 }
 
 @media (min-width: 768px) {
+  #colgauche {
+    padding-top: inherit !important;
+  }
+}
+
+@media (min-width: 768px) {
   #blockRows {
     min-height: 800px;
   }

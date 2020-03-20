@@ -72,7 +72,7 @@ function registerNewAccount($registerRequest)
     {
         $userName = $registerRequest['name'];
         $userFirstname = $registerRequest['firstname'];
-        $userAddress = $registerRequest['address'];
+        $userAddress = addslashes($registerRequest['address']);
         $userCity = $registerRequest['city'];
         $userZip = $registerRequest['zip'];
         $userEmail = $registerRequest['email'];
