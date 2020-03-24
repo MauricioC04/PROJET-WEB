@@ -163,9 +163,25 @@ function getPreviousOrdersFromDB($userId){
 
 
 
+/* ################## PART: ALBUM CD/VINYLES ################## */
 
+function getAlbumCD(){
+    $getAlbumCDQuery = 'SELECT articles.id, articletypes.name, articles.pathFileCover, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price FROM articles INNER JOIN articletypes ON articles.articleType_id = articletypes.id INNER JOIN artists ON articles.artist_id = artists.id INNER JOIN countries ON artists.country_id = countries.id INNER JOIN labels ON articles.label_id = labels.id INNER JOIN genres ON articles.genre_id = genres.id LEFT JOIN vinyleformats ON articles.vinyleFormat_id = vinyleformats.id WHERE articletypes.name = "Album CD";';
 
+    require_once 'BD_base.php';
 
+    return executeQuerySelect($getAlbumCDQuery);
+
+}
+
+function getVinyle(){
+
+    $getVinyleQuery = 'SELECT articles.id, articletypes.name, articles.pathFileCover, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price, vinyleformats.name AS NameFormatVinyle FROM articles INNER JOIN articletypes ON articles.articleType_id = articletypes.id INNER JOIN artists ON articles.artist_id = artists.id INNER JOIN countries ON artists.country_id = countries.id INNER JOIN labels ON articles.label_id = labels.id INNER JOIN genres ON articles.genre_id = genres.id LEFT JOIN vinyleformats ON articles.vinyleFormat_id = vinyleformats.id WHERE articletypes.name = "Vinyle";';
+
+    require_once 'BD_base.php';
+
+    return executeQuerySelect($getVinyleQuery);
+}
 
 
 /*OLD EXERCICE EXAMPLES

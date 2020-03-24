@@ -143,6 +143,7 @@ function registerNewAccount($registerRequest)
 }
 
 
+
 /* ################## PART: COSTUMER ACCOUNT ################## */
 
 function displayCustomerAccount()
@@ -203,14 +204,26 @@ function getPreviousOrders($userEmail){
 
 
 
+
+/* ################## PART: ALBUM CD/VINYLES ################## */
+
 function displayAlbumCD()
 {
-    require 'view/displayAlbumsCD.php';
+
+    require_once "model/model.php";
+    $allArticles = getAlbumCD();
+    $typeArticle = "Album CD";
+
+    require 'view/displayArticles.php';
 }
 
 function displayVinyles()
 {
-    require 'view/displayVinyles.php';
+    require_once "model/model.php";
+    $allArticles = getVinyle();
+    $typeArticle = "Vinyle";
+
+    require 'view/displayArticles.php';
 }
 
 

@@ -17,7 +17,7 @@ WHERE administrators.email = "m.cabral@cpnv.ch";
 
 
 --- Récupération de la liste des albums CD
-SELECT articles.id, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price
+SELECT articles.id, articletypes.name, articles.pathFileCover, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price
 FROM articles
 INNER JOIN articletypes
 ON articles.articleType_id = articletypes.id
@@ -38,7 +38,7 @@ WHERE articletypes.name = "Album CD";
 
 
 --- Récupération de la liste des vinyles
-SELECT articles.id, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price, vinyleformats.name AS NameFormatVinyle
+SELECT articles.id, articletypes.name, articles.pathFileCover, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price, vinyleformats.name AS NameFormatVinyle
 FROM articles
 INNER JOIN articletypes
 ON articles.articleType_id = articletypes.id

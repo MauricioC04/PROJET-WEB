@@ -26,11 +26,12 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background-color: rgb(0,0,0);">
-    <div class="container"><a class="navbar-brand" href="index.php?action=home" style="color: rgb(0,194,255);">ART-MUSIC</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div
-                class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav ml-auto">
+<nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background-color: rgb(0,0,0);">
+    <div class="container">
+        <a class="navbar-brand" href="index.php?action=home" style="color: rgb(0,194,255);">ART-MUSIC</a>
+        <button data-toggle="collapse" class="navbar-toggler custom-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto text-right">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayAlbumCD" style="color: rgb(0,176,251);">ALBUM CD</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayVinyles" style="color: rgb(0,176,251);">VINYLES</a></li>
                 <?php if (isset($_SESSION['userEmail'])) :?>
@@ -38,7 +39,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=#" style="color: rgb(0,176,251);">MON PANIER</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=logout" style="color: rgb(0,176,251);">DECONNEXION</a></li>
                 <?php else :?>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayLogin" style="color: rgb(0,176,251);"> INSCRIPTION/CONNEXION</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayLogin" style="color: rgb(0,176,251);">CONNEXION</a></li>
                 <?php endif ?>
 
             </ul>

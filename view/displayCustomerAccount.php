@@ -15,11 +15,11 @@ $titre="Art-Music - Compte client";
         <div class="container border rounded" id="containerBlock" style="background-color: #f2f5f8;padding: 15px;">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Compte client - Mme/M xxxxxxx</h2>
+                    <h2>Compte client - Mme/M. <?=$_SESSION['userFirstname']; ?> <?=$_SESSION['userName']; ?></h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <h4>Données personnelles</h4>
                     <?php if (@$_GET['errorUpdate'] == true) :?>
                         <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Un problème est survenu lors de la modification des données.</span></h5>
@@ -43,16 +43,19 @@ $titre="Art-Music - Compte client";
                         <button class="btn btn-primary" type="submit" style="width: 100%;margin-top: 20px;">Modifier mes données personnelles</button>
                     </form>
                 </div>
-                <div class="col-md-6" style="margin-top: 25px;">
+                <div class="col-lg-6" style="margin-top: 25px;">
                     <h4>Vos précédentes commandes</h4>
-                    <div class="border rounded-0 border-info" style="height: 200px;overflow: scroll;">
-                        <table>
+                    <div class="border rounded-0" style="height: 70%; overflow: scroll;">
+                        <table class="table">
+                            <thead>
                             <tr>
                                 <th>N°</th>
-                                <th>Date</th>
-                                <th>Montant</th>
-                                <th></th>
+                                <th style="min-width: 106px">Date</th>
+                                <th style="min-width: 110px">Montant</th>
+                                <th>Action</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             <?php
                             foreach ($previousOrders as $result) : ?>
                                 <tr>
@@ -62,6 +65,7 @@ $titre="Art-Music - Compte client";
                                     <td><?= $result['id']; ?><a href="index.php?action=displayDetailsOrder&id=<?= $result['id']; ?>">Détails</a></td>
                                 </tr>
                             <?php endforeach ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
