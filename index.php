@@ -32,10 +32,13 @@ if(isset($_GET['action'])){
             displayCustomerAccount();
             break;
         case'displayArticleDetails':
-            displayArticleDetails();
+            displayArticleDetails($_GET['id']);
             break;
         case'displayAddProduct':
             displayAddProduct();
+            break;
+        case'displayCart':
+            displayCart();
             break;
             /*LOGIN - LOGOUT - SUBSCRIPTION*/
         case'login':
@@ -51,7 +54,19 @@ if(isset($_GET['action'])){
         case 'updateDataUser':
             updateDataUser($_POST);
             break;
-
+            /*CART*/
+        case 'updateCart':
+            updateCart($_GET['id'], $_GET['quantityWished']);
+            break;
+        case 'deleteArticleFromCart':
+            deleteArticleFromCart($_GET['id']);
+            break;
+        case 'deleteCart':
+            deleteCart();
+            break;
+        case 'confirmCart':
+            confirmCart();
+            break;
         default:
             home();
     }

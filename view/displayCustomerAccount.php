@@ -62,7 +62,7 @@ $titre="Art-Music - Compte client";
                                     <td><?= $result['id']; ?></td>
                                     <td><?= $result['orderDate']; ?></td>
                                     <td>CHF <?= $result['totalCost']; ?>.-</td>
-                                    <td><?= $result['id']; ?><a href="index.php?action=displayDetailsOrder&id=<?= $result['id']; ?>">Détails</a></td>
+                                    <td><a href="index.php?action=displayDetailsOrder&id=<?= $result['id']; ?>">Détails</a></td>
                                 </tr>
                             <?php endforeach ?>
                             </tbody>

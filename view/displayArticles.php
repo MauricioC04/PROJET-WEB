@@ -21,7 +21,7 @@ $titre="Art-Music - ". $typeArticle;
                 <div class="col-md-4">
                     <div class="text-center shadow" style="background-color: #eeeeee;padding-top: 10px;padding-bottom: 10px;margin-bottom: 25px;padding-right: 10px;padding-left: 10px;"><img style="margin-bottom: 15px;max-width: 180px;" src="<?=$result['pathFileCover'];?>" width="100%">
                         <ul class="list-unstyled text-left" style="font-style: normal;">
-                            <li>Album: <strong><?=$result['NameArticle'];?></strong></li>
+                            <li>Album: <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><strong><?=$result['NameArticle'];?></strong></a></li>
                             <li>Artiste: <strong><?=$result['NameArtist'];?></strong></li>
                             <li>Genre: <strong><?=$result['NameGenre'];?></strong></li>
                     <?php if ($typeArticle == "Vinyle"):?>
@@ -29,7 +29,13 @@ $titre="Art-Music - ". $typeArticle;
                     <?php endif ?>
                             <li>Quantité: <strong><?=$result['quantity'];?></strong></li>
                             <li>Prix: <strong>CHF <?=$result['price'];?></strong></li>
-                        </ul><button class="btn btn-primary" type="button" style="width: 100%;">Ajouter au panier</button></div>
+                        </ul>
+                    <?php if ($result['quantity'] == 0):?>
+                        <div class="alert alert-danger" role="alert" style="margin: 0;">Produit indisponible !</div>
+                    <?php else :?>
+                        <button class="btn btn-primary" type="button" style="width: 100%;" onclick="window.location.href = 'index.php?action=updateCart&id=<?= $result["id"];?>&quantityWished=1';">Ajouter au panier</button>
+                    <?php endif ?>
+                    </div>
                 </div>
                 <?php
                 endforeach;

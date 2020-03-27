@@ -20,13 +20,11 @@ function isLoginCorrect($userEmail, $userPsw){
     $strSeparator = '\'';
     $loginQuery = 'SELECT * FROM customers WHERE email ='.$strSeparator . $userEmail . $strSeparator;
     require_once 'BD_base.php';
-    echo $loginQuery;
     $queryResult = executeQuerySelect($loginQuery);
 
     if(count($queryResult) == 0){
         $loginQuery = 'SELECT * FROM administrators WHERE email ='.$strSeparator . $userEmail . $strSeparator;
         require_once 'BD_base.php';
-        echo $loginQuery;
         $queryResult = executeQuerySelect($loginQuery);
     }
 
@@ -48,7 +46,6 @@ function checkCityZip($city, $zip)
     $strSeparator = '\'';
     $checkQuery = 'SELECT * FROM cities WHERE name ='.$strSeparator . $city . $strSeparator . 'AND zip ='. $zip;
     require_once 'BD_base.php';
-    echo $checkQuery;
     $queryResult = executeQuerySelect($checkQuery);
 
     if(count($queryResult) == 1)
@@ -64,7 +61,6 @@ function getIdCity($zip)
 
     $getIdZipQuery = 'SELECT id FROM cities WHERE zip ='. $zip;
     require_once 'BD_base.php';
-    echo $getIdZipQuery;
     $queryResult = executeQuerySelect($getIdZipQuery);
 
     return $queryResult[0]['id'];
@@ -82,7 +78,6 @@ function registerDataUserInDB($userName, $userFirstname, $userAddress, $userEmai
     $userIdZip = getIdCity($userZip);
 
     $registerQuery = 'INSERT INTO customers (name, firstname, address, email, password, city_id) VALUES ('.$strSeparator.$userName.$strSeparator. ',' .$strSeparator.$userFirstname.$strSeparator. ',' .$strSeparator.$userAddress.$strSeparator. ',' .$strSeparator.$userEmail.$strSeparator. ',' .$strSeparator.$userHashPsw.$strSeparator. ',' .$userIdZip.');';
-    echo $registerQuery;
     require_once 'BD_base.php';
     $queryResult = executeQueryIDU($registerQuery);
     if($queryResult){
@@ -97,7 +92,6 @@ function checkEmailAlreadyExists($userEmail){
     $strSeparator = '\'';
     $checkQuery = 'SELECT * FROM customers WHERE email ='.$strSeparator . $userEmail . $strSeparator;
     require_once 'BD_base.php';
-    echo $checkQuery;
     $queryResult = executeQuerySelect($checkQuery);
 
     if(count($queryResult) == 1){
@@ -115,7 +109,6 @@ function getInfosUser($userEmail)
     $strSeparator = '\'';
     $getInfosQuery = 'SELECT customers.name, customers.firstname, customers.address, cities.zip, cities.name AS nameCity, customers.email FROM customers INNER JOIN cities ON customers.city_id = cities.id WHERE customers.email ='.$strSeparator . $userEmail . $strSeparator ;
     require_once 'BD_base.php';
-    echo $getInfosQuery;
     $queryResult = executeQuerySelect($getInfosQuery);
 
     return $queryResult;
@@ -129,7 +122,6 @@ function updateDataUserInDB($userName, $userFirstname, $userAddress, $userZip, $
     $userIdZip = getIdCity($userZip);
 
     $updateDataUserQuery = 'UPDATE customers SET name='.$strSeparator.$userName.$strSeparator.', firstname='.$strSeparator.$userFirstname.$strSeparator.', address='.$strSeparator.$userAddress.$strSeparator.', city_id='.$strSeparator.$userIdZip.$strSeparator.' WHERE email='.$strSeparator.$userEmail.$strSeparator;
-    echo $updateDataUserQuery;
     require_once 'BD_base.php';
     $queryResult = executeQueryIDU($updateDataUserQuery);
     if($queryResult){
@@ -144,7 +136,6 @@ function getIdUser($userEmail){
 
     $getIdUserQuery = 'SELECT id FROM customers WHERE email ='. $strSeparator.$userEmail.$strSeparator;
     require_once 'BD_base.php';
-    echo $getIdUserQuery;
     $queryResult = executeQuerySelect($getIdUserQuery);
 
     return $queryResult[0]['id'];
@@ -155,7 +146,6 @@ function getPreviousOrdersFromDB($userId){
     $getPreviousOrdersQuery = 'SELECT orders.id, orders.orderDate, SUM(articles.price) AS totalCost FROM orders INNER JOIN customers ON orders.customer_id = customers.id INNER JOIN orders_has_articles ON orders_has_articles.Orders_id = orders.id INNER JOIN articles ON orders_has_articles.Articles_id = articles.id WHERE customers.id ='.$userId.' GROUP BY orders.id';
 
     require_once 'BD_base.php';
-    echo $getPreviousOrdersQuery;
     $queryResult = executeQuerySelect($getPreviousOrdersQuery);
 
     return $queryResult;
@@ -183,6 +173,74 @@ function getVinyle(){
     return executeQuerySelect($getVinyleQuery);
 }
 
+function getAnArticle($id){
+
+    $getAnArticleQuery = 'SELECT articles.id, articletypes.name, articles.pathFileCover, articles.name AS NameArticle, artists.name AS NameArtist, articles.releaseYear, genres.name AS NameGenre, labels.name AS NameLabel, articles.quantity, articles.price FROM articles INNER JOIN articletypes ON articles.articleType_id = articletypes.id INNER JOIN artists ON articles.artist_id = artists.id INNER JOIN countries ON artists.country_id = countries.id INNER JOIN labels ON articles.label_id = labels.id INNER JOIN genres ON articles.genre_id = genres.id LEFT JOIN vinyleformats ON articles.vinyleFormat_id = vinyleformats.id WHERE articles.id ='.$id;
+
+    require_once 'BD_base.php';
+
+    return executeQuerySelect($getAnArticleQuery);
+}
+
+function getDetailsArticle($idArticle){
+
+    $getDetailsArticleQuery = 'SELECT musics.title, musics.pathFileMusic, musics.duration FROM musics INNER JOIN articles ON musics.article_id = articles.id WHERE articles.id ='.$idArticle;
+
+    require_once 'BD_base.php';
+
+    return executeQuerySelect($getDetailsArticleQuery);
+
+}
+
+function getNumbersOfMusics($idArticle){
+
+    $getNumbersOfMusicsQuery = 'SELECT COUNT(musics.id) FROM musics INNER JOIN articles ON musics.article_id = articles.id WHERE articles.id ='.$idArticle;
+
+    require_once 'BD_base.php';
+
+    return executeQuerySelect($getNumbersOfMusicsQuery);
+}
+
+
+
+/* ################## PART: CART ################## */
+
+function createNewOrder(){
+
+    $idUser = getIdUser($_SESSION['userEmail']);
+
+    $createNewOrderQuery = 'INSERT INTO orders (customer_id, orderDate) VALUES ('.$idUser.', CURRENT_DATE());';
+    if(executeQueryIDU($createNewOrderQuery)){
+        return insertDataOrder($idUser);
+    }
+    else{
+        return false;
+    }
+
+}
+
+function insertDataOrder($idUser){
+
+
+    foreach ($_SESSION['cart'] as $result){
+        $insertArticleOrder = 'INSERT INTO orders_has_articles (orders_id, articles_id, quantity) VALUES ((SELECT MAX(orders.id) FROM orders WHERE orders.customer_id ='.$idUser.'),'.$result['id'].','.$result['quantity'].')';
+        if(!executeQueryIDU($insertArticleOrder)) {
+            break;
+            return false;
+        }
+        else{
+            updateQuantityArticle($result['id'], $result['quantity']);
+        }
+
+    }
+
+    return true;
+}
+
+function updateQuantityArticle($idArticle, $quantity){
+    $updateQuantityQuery = 'UPDATE articles SET quantity = quantity-'.$quantity.' WHERE articles.id = '.$idArticle;
+    executeQueryIDU($updateQuantityQuery);
+}
 
 /*OLD EXERCICE EXAMPLES
 

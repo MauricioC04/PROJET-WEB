@@ -226,15 +226,91 @@ function displayVinyles()
     require 'view/displayArticles.php';
 }
 
-
-
-function displayArticleDetails()
+function displayArticleDetails($idArticle)
 {
-    require '';
+    require_once "model/model.php";
+    $infosArticle = getAnArticle($idArticle);
+    $detailsArticle = getDetailsArticle($idArticle);
+    $numberOfMusics = getNumbersOfMusics($idArticle);
+
+    require 'view/displayDetailsProductCustomer.php';
 }
+
 function displayAddProduct()
 {
     require 'view/displayAddProduct.php';
+}
+
+
+/* ################## PART: DETAILS ALBUM CD/VINYLE ################## */
+
+
+
+
+/* ################## PART: CART ################## */
+
+function displayCart(){
+
+    require 'view/displayCart.php';
+
+}
+
+function updateCart($idArticle, $qtyWished){
+
+
+
+    require "model/model.php";
+    $articleResults = getAnArticle($idArticle);
+    $_SESSION['qtyError'] = false;
+
+
+    if ($articleResults[0]['quantity'] > $qtyWished && $qtyWished != 0) {
+
+
+
+        if (isset ($_GET['articleToUpdate'])) {
+            $_SESSION['cart'][$_GET['articleToUpdate']]['quantity'] = $qtyWished;
+        } else {
+
+
+            $addingArticleToCart = array('id' => $idArticle, 'articleType' => $articleResults[0]['name'], 'nameArticle' => $articleResults[0]['NameArticle'], 'nameArtist' => $articleResults[0]['NameArtist'], 'releaseYear' => $articleResults[0]['releaseYear'], 'quantity' => $qtyWished, 'price' => $articleResults[0]['price'], 'pathFileCover' => $articleResults[0]['pathFileCover']);
+            if (@isset($_SESSION['cart'])) {
+                array_push($_SESSION['cart'], $addingArticleToCart);
+            } else {
+                $_SESSION['cart'][0] = $addingArticleToCart;
+            }
+        }
+        $_GET['action'] = "displayCart";
+        displayCart();
+    }
+    else {
+
+        $_SESSION['qtyError'] = true;
+        $_GET['action'] = "displayCart";
+        require "view/displayCart.php";
+    }
+
+}
+
+function deleteArticleFromCart($line){
+    unset($_SESSION['cart'][$line]);
+    //Delete empty lines
+    sort($_SESSION['cart']);
+    require "view/displayCart.php";
+}
+
+function deleteCart(){
+    $_SESSION['cart']=array();
+    require "view/displayCart.php";
+}
+
+function confirmCart(){
+
+    require "model/model.php";
+    createNewOrder();
+    require "view/displayConfirmationPurchase.php";
+    deleteCart();
+
 }
 
 

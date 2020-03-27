@@ -11,15 +11,6 @@
 }
 
 @media (min-width: 768px) {
-  #blockInscription {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-@media (min-width: 768px) {
   #colDroite {
     margin-bottom: inherit !important;
   }
@@ -27,12 +18,6 @@
 
 #colgauche {
   padding-top: 20px;
-}
-
-@media (min-width: 768px) {
-  #colgauche {
-    padding-top: inherit !important;
-  }
 }
 
 @media (min-width: 768px) {
@@ -122,3 +107,21 @@
   }
 }
 
+@media (min-width: 768px) {
+  #mobileTable {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #desktopTable {
+    display: inherit !important;
+  }
+}
+
+#imgProduct {
+  max-width: 130px;
+  max-height: 130px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}

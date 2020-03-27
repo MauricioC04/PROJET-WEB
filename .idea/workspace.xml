@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/displayArticles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controler/controler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/requêtes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/requêtes.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/content/images/home/presentation.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/images/home/presentation.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/content/styles/Navigation-Clean.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/Navigation-Clean.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayAlbumsCD.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/content/styles/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/content/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayArticles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/displayCustomerAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayCustomerAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayVinyles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayDetailsProductCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsProductCustomer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/gabarit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +39,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/php_xdebug-2.9.3-7.4-vc15-nts-x86_64.dll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projet WEB\PROJET-WEB-STORM\view\content" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projet WEB\SITE-WEB-PRODUCTION\view" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projet WEB\SITE-WEB-PRODUCTION\view" />
+      <recent name="E:\Projet WEB\PROJET-WEB-STORM\view\content" />
     </key>
   </component>
   <component name="RunManager">
@@ -80,6 +81,12 @@
       <workItem from="1585039088933" duration="3142000" />
       <workItem from="1585044900924" duration="2801000" />
       <workItem from="1585059319880" duration="4755000" />
+      <workItem from="1585064586565" duration="2250000" />
+      <workItem from="1585140184917" duration="3453000" />
+      <workItem from="1585143786621" duration="5618000" />
+      <workItem from="1585152337190" duration="3041000" />
+      <workItem from="1585205014967" duration="6102000" />
+      <workItem from="1585293307047" duration="10459000" />
     </task>
     <servers />
   </component>
@@ -103,22 +110,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584606238737" />
-    <state width="1877" height="86" key="GridCell.Tab.0.bottom" timestamp="1585064303690">
+    <state width="1877" height="88" key="GridCell.Tab.0.bottom" timestamp="1585304607265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585064303690" />
-    <state width="1877" height="86" key="GridCell.Tab.0.center" timestamp="1585064303690">
+    <state width="1877" height="88" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607265" />
+    <state width="1877" height="88" key="GridCell.Tab.0.center" timestamp="1585304607263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585064303690" />
-    <state width="1877" height="86" key="GridCell.Tab.0.left" timestamp="1585064303690">
+    <state width="1877" height="88" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607263" />
+    <state width="1877" height="88" key="GridCell.Tab.0.left" timestamp="1585304607263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585064303690" />
-    <state width="1877" height="86" key="GridCell.Tab.0.right" timestamp="1585064303690">
+    <state width="1877" height="88" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607263" />
+    <state width="1877" height="88" key="GridCell.Tab.0.right" timestamp="1585304607265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585064303690" />
+    <state width="1877" height="88" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607265" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584539260454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -139,6 +146,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="953" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1584625450470" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1585297031013">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585297031013" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1584622469779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

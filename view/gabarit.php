@@ -9,23 +9,28 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html style="height: 100%">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title><?=$titre;?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="view/content/styles/Login-Form-Dark.css">
     <link rel="stylesheet" href="view/content/styles/Footer-Dark.css">
     <link rel="stylesheet" href="view/content/styles/Navigation-Clean.css">
     <link rel="stylesheet" href="view/content/styles/styles.css">
+    <link rel="stylesheet" href="view/content/styles/custom.css">
+
+
 
 </head>
 
-<body>
+<body style="height: 100%">
 <nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background-color: rgb(0,0,0);">
     <div class="container">
         <a class="navbar-brand" href="index.php?action=home" style="color: rgb(0,194,255);">ART-MUSIC</a>
@@ -36,7 +41,9 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayVinyles" style="color: rgb(0,176,251);">VINYLES</a></li>
                 <?php if (isset($_SESSION['userEmail'])) :?>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayCustomerAccount" style="color: rgb(0,176,251);">MON COMPTE</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=#" style="color: rgb(0,176,251);">MON PANIER</a></li>
+                    <?php if (isset($_SESSION['cart'])) :?>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayCart" style="color: rgb(0,176,251);">MON PANIER</a></li>
+                    <?php endif ?>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=logout" style="color: rgb(0,176,251);">DECONNEXION</a></li>
                 <?php else :?>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayLogin" style="color: rgb(0,176,251);">CONNEXION</a></li>
