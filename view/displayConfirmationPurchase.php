@@ -12,7 +12,7 @@ $titre="Art-Music - Panier";
 
 
         <div class="d-flex align-items-center" id="mainBlock" style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);padding-top: 40px;padding-bottom: 40px;background-position: center;background-size: cover;background-repeat: no-repeat;padding-right: 0;padding-left: 0;">
-            <div class="container" style="background-color: #f2f5f8;padding-right: 15px;padding-top: 15px;padding-bottom: 15px;padding-left: 15px;height: fit-content;">
+            <div class="container rounded" style="background-color: #f2f5f8;padding-right: 15px;padding-top: 15px;padding-bottom: 15px;padding-left: 15px;height: fit-content;">
                 <div class="row">
                     <div class="col-md-12" style="text-align: center">
                         <?php
@@ -20,26 +20,17 @@ $titre="Art-Music - Panier";
                         foreach ($_SESSION['cart'] as $result) : ?>
 
                             <?php $totalAmount+= $result['price']*$result['quantity']; endforeach ?>
-                        <h2 class="text-center"><i class="fas fa-shopping-cart" style="font-size: 45px;"></i><br>Votre panier - Montant total CHF <?= $totalAmount; ?></h2>
-                        <?php if ($_SESSION['qtyError']):?>
-                            <strong style="color: red">Quantité sélectionnée trop élevée ou inférieure à 1</strong></li>
-                        <?php $_SESSION['qtyError'] = false; endif ?>
+                        <h2 class="text-center"><i class="fas fa-shopping-cart" style="font-size: 45px;"></i><br>Votre confirmation d'achat - Montant total CHF <?= $totalAmount; ?></h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12" style="margin-bottom: 10px;margin-top: 10px;">
                         <div class="table-responsive text-center" id="mobileTable">
                             <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="align-middle">Vos articles</th>
-                                </tr>
-                                </thead>
                                 <tbody>
                                     <?php
 
                                     $i = 1;
-
 
                                     foreach ($_SESSION['cart'] as $result) : ?>
                                     <tr>
@@ -50,10 +41,7 @@ $titre="Art-Music - Panier";
                                                     <div><?= $result['articleType']; ?></div>
                                                     <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><div><?= $result['nameArticle']; ?></div></a>
                                                     <div><strong>CHF <?= $result['price']*$result['quantity']; ?></strong></div>
-
-                                                        <div style="display: flex; align-items: center; margin-top: 15px;">
-                                                            <div><?= $result['quantity']; ?></div>
-                                                        </div>
+                                                        <div style="display: flex; align-items: center;"><?= $result['quantity']; ?> unité(s)</div>
 
                                                 </div>
                                             </div>
@@ -62,6 +50,7 @@ $titre="Art-Music - Panier";
                                         <?php endforeach ?>
                                     </tbody>
                             </table>
+                            <div class="alert alert-primary" style="text-align: center; color: #214a80">Nous vous enverrons la facture de votre commande par courrier postale selon vos données personnelles</div>
                         </div>
 
 
@@ -101,6 +90,7 @@ $titre="Art-Music - Panier";
 
                                 </tbody>
                             </table>
+                            <div class="alert alert-primary" style="text-align: center; max-width: fit-content; margin-right: auto; margin-left: auto; ">Nous vous enverrons la facture de votre commande par courrier postale selon vos données personnelles</div>
                         </div>
                     </div>
                 </div>

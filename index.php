@@ -40,6 +40,9 @@ if(isset($_GET['action'])){
         case'displayCart':
             displayCart();
             break;
+        case 'displayDetailsOrder':
+            displayDetailsOrder($_GET['orderId']);
+            break;
             /*LOGIN - LOGOUT - SUBSCRIPTION*/
         case'login':
             login($_POST);
@@ -67,6 +70,11 @@ if(isset($_GET['action'])){
         case 'confirmCart':
             confirmCart();
             break;
+            /*ADMINISTRATOR*/
+        case 'deleteArticleFromList':
+            deleteArticleFromList($_GET['id'], $_GET['typeArticle']);
+            break;
+
         default:
             home();
     }

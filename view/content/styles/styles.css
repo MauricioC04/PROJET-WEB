@@ -104,6 +104,21 @@
 @media (min-width: 768px) {
   #imgProduct {
     margin-right: 15px;
+    margin-left: inherit;
+  }
+}
+
+@media (max-width: 767px) {
+  #imgProduct {
+    margin-right: auto !important;
+    margin-left: auto;
+  }
+  #subContainerInfoProduct{
+    flex-direction: column;
+  }
+  #descriptionProduct{
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -119,9 +134,17 @@
   }
 }
 
+@media (min-width: 380px) {
+  #desktopCellDuration {
+    display: table-cell !important;
+  }
+}
+
+
+
+
 #imgProduct {
-  max-width: 130px;
-  max-height: 130px;
+
   margin-bottom: 15px;
   margin-right: 10px;
 }

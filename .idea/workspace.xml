@@ -2,18 +2,132 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/view/content/images/icons/album.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/images/icons/houseMusic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/images/icons/microphone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/images/icons/nameAlbum.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/images/icons/releaseYear.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/images/icons/style.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/100Esquimaux).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/101O.D.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/102Vinyle.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/103Saturne.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/104Galatée.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/105Le regard des gens.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/106Programmé.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/107Besoin de sens.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/108Nekketsu.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/109A Head Full Of Dreams.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/110Bird.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/111Hymn For The Weekend.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/112Everglow.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/113Adventure Of A Lifetime.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/114Fun (feat. Tove Lo).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/115Kaleidoscope.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/116Army Of One.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/117Amazing Day.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/118Colour Spectrum.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/119Up&amp;Up.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/13Alerte indigo.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/14Encore temps.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/15Todo Esta Bien.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/17Sorry un peu.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/18Namaste.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/19La mélo.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/20Love, Love, Love.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/21Baraka.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/22Au mieux le meilleur.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/23Peau lisse Man.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/24Le chemin.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/25Need U.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/26Missin U.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/27No Limit (feat. Young Thug).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/28Bump.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/29Let Me.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/30Downtime.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/32Make U A Believer.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/33Mind Of A Man.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/34FWM.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/35Rivals (feat. Future).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/36Tell Me.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/37Hard II Love.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/38Stronger.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/39Champions.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/40Underclass Hero.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/42Speak Of The Devil.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/43Dear Father.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/44Count Your Last Blessings.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/45Ma Poubelle.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/46March Of The Dogs.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/47The Jester.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/48With Me.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/49Pull The Curtain.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/50King Of Contradiction.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/51Best Of Me.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/52Confusion And Frustration In Modern Times.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/53So Long Goodbye.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/54The Ringer.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/55Greatest.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/56Lucky You (feat. Joyner Lucas).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/57Paul - Skit.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/58Normal.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/59Em Calls Paul - Skit.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/60Stepping Stone.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/61Not Alike (feat. Royce Da 59).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/62Kamikaze.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/64Nice Guy (with Jessie Reyez).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/65Good Guy (feat. Jessie Reyez).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/66Venom - Music From The Motion Picture.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/67Wanna Be Startin' Somethin'.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/68Baby Be Mine.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/69The Girl Is Mine (with Paul McCartney).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/70Thriller.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/71Beat It - Single Version.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/73Human Nature.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/74P.Y.T. (Pretty Young Thing).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/75The Lady in My Life.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/76Intro.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/77Chocolat.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/78Malade.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/79Coeur des hommes.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/80Parano (with -M-).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/81Soleil.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/82Bobo.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/83Solo.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/84194.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/85Normal.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/863 Etoiles.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/87Interlude.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/88Viseur.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/89Kuneditdoen (with Zwangere Guy).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/90La Belgique Afrique.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/91T'es bonne.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/92Dis-moi.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/93En silence (with Témé Tan).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/94Perdu (with Damon Albarn).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/95Humanoïde.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/96Mauvaise graine.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/97Squa.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/98Réalité augmentée.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/content/musics/99Avant tu riais.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controler/controler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/content/styles/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/content/images/home/presentation.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/images/home/presentation.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/content/musics/1Wake Me Up.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/musics/1Wake Me Up.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/content/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayAdministratorDisplayAlbumCD.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayArticlesAdministrator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/displayArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayArticles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/displayCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayCart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/displayCustomerAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayCustomerAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayDetailsOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsOrder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/displayDetailsProductCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsProductCustomer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displayLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/displaySubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displaySubscription.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/gabarit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,17 +139,28 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1ZFZ6Bh8yWH1xFgs5l5c46EyUm3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -87,11 +212,22 @@
       <workItem from="1585152337190" duration="3041000" />
       <workItem from="1585205014967" duration="6102000" />
       <workItem from="1585293307047" duration="10459000" />
+      <workItem from="1585304710956" duration="18056000" />
+      <workItem from="1585338858905" duration="6390000" />
+      <workItem from="1585403060691" duration="8494000" />
+      <workItem from="1585554952486" duration="7569000" />
+      <workItem from="1585575427254" duration="15928000" />
+      <workItem from="1585600408826" duration="968000" />
+      <workItem from="1585644853456" duration="4570000" />
+      <workItem from="1585655707838" duration="7838000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="174" key="#CLI_Interpreters" timestamp="1584606240191">
@@ -106,26 +242,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="631" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584606172785" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585308924609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585308924609" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1584606238737">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584606238737" />
-    <state width="1877" height="88" key="GridCell.Tab.0.bottom" timestamp="1585304607265">
+    <state width="914" height="85" key="GridCell.Tab.0.bottom" timestamp="1585663583841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="88" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607265" />
-    <state width="1877" height="88" key="GridCell.Tab.0.center" timestamp="1585304607263">
+    <state width="914" height="85" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585663583841" />
+    <state width="914" height="85" key="GridCell.Tab.0.center" timestamp="1585663583841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="88" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607263" />
-    <state width="1877" height="88" key="GridCell.Tab.0.left" timestamp="1585304607263">
+    <state width="914" height="85" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585663583841" />
+    <state width="914" height="85" key="GridCell.Tab.0.left" timestamp="1585663583841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="88" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607263" />
-    <state width="1877" height="88" key="GridCell.Tab.0.right" timestamp="1585304607265">
+    <state width="914" height="85" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585663583841" />
+    <state width="914" height="85" key="GridCell.Tab.0.right" timestamp="1585663583841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="88" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585304607265" />
+    <state width="914" height="85" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585663583841" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584539260454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -138,18 +278,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585062619964" />
-    <state x="-7" y="13" width="944" height="1006" key="dock-window-1" timestamp="1585063281016">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1585662938164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-7" y="13" width="944" height="1006" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1585063281016" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1585662938164" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-2" timestamp="1584625450470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="953" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1584625450470" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1585297031013">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1585600535460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585297031013" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585600535460" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1584622469779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

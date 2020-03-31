@@ -45,7 +45,7 @@ $titre="Art-Music - Compte client";
                 </div>
                 <div class="col-lg-6" style="margin-top: 25px;">
                     <h4>Vos précédentes commandes</h4>
-                    <div class="border rounded-0" style="height: 70%; overflow: scroll;">
+                    <div class="border rounded-0" style="height: 315px; overflow: scroll;">
                         <table class="table">
                             <thead>
                             <tr>
@@ -62,7 +62,7 @@ $titre="Art-Music - Compte client";
                                     <td><?= $result['id']; ?></td>
                                     <td><?= $result['orderDate']; ?></td>
                                     <td>CHF <?= $result['totalCost']; ?>.-</td>
-                                    <td><a href="index.php?action=displayDetailsOrder&id=<?= $result['id']; ?>">Détails</a></td>
+                                    <td><a href="index.php?action=displayDetailsOrder&orderId=<?= $result['id']; ?>">Détails</a></td>
                                 </tr>
                             <?php endforeach ?>
                             </tbody>

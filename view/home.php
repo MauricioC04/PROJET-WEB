@@ -8,6 +8,7 @@
 
 ob_start();
 $titre="Art-Music - Accueil";
+
 ?>
 
 <img src="view/content/images/home/titre.jpg" width="100%" alt="image de présentation">
@@ -16,18 +17,18 @@ $titre="Art-Music - Accueil";
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2>Qui sommes-nous ?</h2>
+                <h2>Présentation</h2>
                 <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula viverra elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam egestas pellentesque ligula, vitae consectetur
-                    ex hendrerit non. Mauris elementum dictum risus, at mollis mauris. Curabitur quis tristique mauris. Vestibulum faucibus leo quam, vel ornare quam interdum ac. Nam vitae lacus euismod, accumsan justo in, malesuada metus.<br><br></p>
-                <h1>Nos prestations ?</h1>
+                    li hendrerit non. Mauris elementum dictum risus, at mollis mauris. Curabitur quis tristique mauris. Vestibulum faucibus leo quam, vel ornare quam interdum ac. Nam vitae lacus euismod, accumsan justo in, malesuada metus.<br><br>Curabitur quis tristique mauris. Vestibulum faucibus leo quam, vel ornare quam interdum ac. Nam vitae lacus euismod, accumsan justo in, malesuada metus. Curabitur quis tristique mauris. Vestibulum faucibus leo quam, vel ornare quam interdum ac. Nam vitae lacus euismod, accumsan justo in, malesuada metus.</p>
+                <!-- <h2>Nos prestations</h2>
                 <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                </ul>
+                    <li>Vente d'album CD & Vinyles</li>
+                    <li>Pré-écoute en magasin ou sur notre site</li>
+                    <li>Téléchargement direct possible</li>
+                    <li>Conseils et orientations</li>
+                </ul>-->
             </div>
-            <div class="col-md-6 align-self-center"><img class="img-fluid shadow-lg" src="view/content/images/home/presentation.jpg" width="100%"></div>
+            <div class="col-md-6 align-self-center"><img class="img-fluid shadow-lg rounded" src="view/content/images/home/presentation.jpg"></div>
         </div>
     </div>
 </div>

@@ -20,17 +20,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="view/content/styles/Login-Form-Dark.css">
     <link rel="stylesheet" href="view/content/styles/Footer-Dark.css">
     <link rel="stylesheet" href="view/content/styles/Navigation-Clean.css">
     <link rel="stylesheet" href="view/content/styles/styles.css">
     <link rel="stylesheet" href="view/content/styles/custom.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+    </script>
 
 
 </head>
 
-<body style="height: 100%">
+<body style="height: 100%" onload="myFunction()">
 <nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background-color: rgb(0,0,0);">
     <div class="container">
         <a class="navbar-brand" href="index.php?action=home" style="color: rgb(0,194,255);">ART-MUSIC</a>
@@ -39,8 +45,10 @@
             <ul class="nav navbar-nav ml-auto text-right">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayAlbumCD" style="color: rgb(0,176,251);">ALBUM CD</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayVinyles" style="color: rgb(0,176,251);">VINYLES</a></li>
-                <?php if (isset($_SESSION['userEmail'])) :?>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayCustomerAccount" style="color: rgb(0,176,251);">MON COMPTE</a></li>
+                <?php if (isset($_SESSION['userEmail']) || isset($_SESSION['adminEmail'])) :?>
+                    <?php if (isset($_SESSION['userEmail'])) :?>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayCustomerAccount" style="color: rgb(0,176,251);">MON COMPTE</a></li>
+                    <?php endif ?>
                     <?php if (isset($_SESSION['cart'])) :?>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?action=displayCart" style="color: rgb(0,176,251);">MON PANIER</a></li>
                     <?php endif ?>
@@ -84,6 +92,9 @@
         </div>
     </footer>
 </div>
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>

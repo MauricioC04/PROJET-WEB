@@ -1,21 +1,13 @@
 <?php
 
 
-
-
-
-
-
-function SessionOpen(){
-
-}
-
-
 /* ################## PART: LOGIN/SUBSCRIPTION ################## */
 
 function isLoginCorrect($userEmail, $userPsw){
 
     $result = false;
+    $userType = 'customer';
+    $test = array();
 
     $strSeparator = '\'';
     $loginQuery = 'SELECT * FROM customers WHERE email ='.$strSeparator . $userEmail . $strSeparator;
@@ -26,17 +18,18 @@ function isLoginCorrect($userEmail, $userPsw){
         $loginQuery = 'SELECT * FROM administrators WHERE email ='.$strSeparator . $userEmail . $strSeparator;
         require_once 'BD_base.php';
         $queryResult = executeQuerySelect($loginQuery);
+        $userType = 'administrator';
     }
 
     if(count($queryResult) == 1){
         $userHashPsw = $queryResult[0]['password'];
         $hashPasswordDebug = password_hash($userPsw, PASSWORD_DEFAULT);
         $result = password_verify($userPsw, $userHashPsw);
-        return $result;
-
     }
 
-    return $result;
+    $test = array('checkLogin' => $result, 'userType' => $userType);
+
+    return $test;
 }
 
 function checkCityZip($city, $zip)
@@ -101,10 +94,20 @@ function checkEmailAlreadyExists($userEmail){
     return $result;
 }
 
+function getLocalityFromBD(){
+    $getLocalityQuery = 'SELECT name FROM cities ORDER BY name ASC';
+    require_once 'BD_base.php';
+    $queryResult = executeQuerySelect($getLocalityQuery);
+
+    return $queryResult;
+}
+
+
+
 
 /* ################## PART: CUSTOMER ACCOUNT ################## */
 
-function getInfosUser($userEmail)
+function getInfosCustomer($userEmail)
 {
     $strSeparator = '\'';
     $getInfosQuery = 'SELECT customers.name, customers.firstname, customers.address, cities.zip, cities.name AS nameCity, customers.email FROM customers INNER JOIN cities ON customers.city_id = cities.id WHERE customers.email ='.$strSeparator . $userEmail . $strSeparator ;
@@ -151,6 +154,14 @@ function getPreviousOrdersFromDB($userId){
     return $queryResult;
 }
 
+function getAPreviousOrder($idOrder){
+
+    $getAPreviousOrderQuery = 'SELECT orders.id AS orderId, articles.id AS articleId, articletypes.name AS articleType, orders.orderDate AS orderDate, articles.pathFileCover, articles.name AS nameArticle, artists.name AS nameArtist, articles.releaseYear, articles.price, orders_has_articles.Quantity AS quantity FROM articles INNER JOIN artists ON articles.artist_id = artists.id INNER JOIN articletypes ON articles.articleType_id = articletypes.id INNER JOIN orders_has_articles ON orders_has_articles.Articles_id = articles.id INNER JOIN orders ON orders_has_articles.Orders_id = orders.id WHERE orders_has_articles.Orders_id ='.$idOrder.' GROUP BY articles.id';
+    require_once 'BD_base.php';
+
+    return executeQuerySelect($getAPreviousOrderQuery);
+}
+
 
 
 /* ################## PART: ALBUM CD/VINYLES ################## */
@@ -184,7 +195,7 @@ function getAnArticle($id){
 
 function getDetailsArticle($idArticle){
 
-    $getDetailsArticleQuery = 'SELECT musics.title, musics.pathFileMusic, musics.duration FROM musics INNER JOIN articles ON musics.article_id = articles.id WHERE articles.id ='.$idArticle;
+    $getDetailsArticleQuery = 'SELECT musics.id AS idMusic, musics.title, musics.pathFileMusic, musics.duration FROM musics INNER JOIN articles ON musics.article_id = articles.id WHERE articles.id ='.$idArticle;
 
     require_once 'BD_base.php';
 

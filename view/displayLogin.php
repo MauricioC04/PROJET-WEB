@@ -18,6 +18,9 @@ $titre="Art-Music - Inscription/connexion";
             <?php if (@$_GET['loginError'] == true) :?>
                 <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Email ou mot de passe incorrect</span></h5>
             <?php endif ?>
+        <?php if (@$_GET['connexionRequiredError'] == true) :?>
+            <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Veuillez vous connecter ou créer un compte avant d'élaborer votre panier</span></h5>
+        <?php endif ?>
         <div class="form-group"><input class="form-control" type="email" name="inputUserEmailAddress" placeholder="Email" style="color: #214a80"></div>
         <div class="form-group"><input class="form-control" type="password" name="inputUserPsw" placeholder="Mot de passe" style="color: #214a80"></div>
         <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Connexion</button></div><a class="forgot" href="index.php?action=displaySubscription">Créer un compte</a></form>

@@ -30,10 +30,21 @@ function login($loginRequest)
         $userPsw = $loginRequest['inputUserPsw'];
 
         require_once "model/model.php";
-        if (isLoginCorrect($userEmailAddress, $userPsw))
+
+
+            $resultIsLoginCorrect = isLoginCorrect($userEmailAddress, $userPsw)['checkLogin'];
+            $resultUserType = isLoginCorrect($userEmailAddress, $userPsw)['userType'];
+
+
+        if ($resultIsLoginCorrect)
         {
-            $infoUser = getInfosUser($userEmailAddress);
-            createSession($infoUser[0]['name'], $infoUser[0]['firstname'], $infoUser[0]['address'], $infoUser[0]['zip'], $infoUser[0]['nameCity'], $infoUser[0]['email']);
+            if($resultUserType == 'customer') {
+                $infoUser = getInfosCustomer($userEmailAddress);
+                createSessionCostumer($infoUser[0]['name'], $infoUser[0]['firstname'], $infoUser[0]['address'], $infoUser[0]['zip'], $infoUser[0]['nameCity'], $infoUser[0]['email'], $resultUserType);
+            }
+            else{
+                createSessionAdministrator($userEmailAddress);
+            }
             $_GET['action'] = "home";
             require "view/home.php";
         }
@@ -53,19 +64,21 @@ function login($loginRequest)
     }
 }
 
-function createSession($userName, $userFirstname, $userAddress, $userZip, $userCity, $userEmail)
+function createSessionCostumer($userName, $userFirstname, $userAddress, $userZip, $userCity, $userEmail, $userType='customer')
 {
-
     $_SESSION['userName'] = stripslashes($userName);
     $_SESSION['userFirstname'] = stripslashes($userFirstname);
     $_SESSION['userAddress'] = stripslashes($userAddress);
     $_SESSION['userZip'] = $userZip;
     $_SESSION['userCity'] = stripslashes($userCity);
     $_SESSION['userEmail'] = $userEmail;
+    $_SESSION['userType'] = $userType;
+}
 
-    //set user type in Session
-    //$userType = getUserType($userEmailAddress);
-    //$_SESSION['userType'] = $userType;
+function createSessionAdministrator($adminEmail, $userType ='administrator'){
+
+    $_SESSION['adminEmail'] = $adminEmail;
+    $_SESSION['userType'] = $userType;
 }
 
 function logout(){
@@ -78,6 +91,8 @@ function logout(){
 
 function displaySubscription()
 {
+    require_once "model/model.php";
+    $cities = getLocalityFromBD();
     require 'view/displaySubscription.php';
 }
 
@@ -112,7 +127,7 @@ function registerNewAccount($registerRequest)
             if ($userPassword == $userPasswordRepeat) {
                 if (checkCityZip($userCity, $userZip)) {
                     if (registerDataUserInDB($userName, $userFirstname, $userAddress, $userEmail, $userPassword, $userZip)) {
-                        createSession($userName, $userFirstname, $userAddress, $userZip, $userCity, $userEmail);
+                        createSessionCostumer($userName, $userFirstname, $userAddress, $userZip, $userCity, $userEmail);
                         $_GET['action'] = "home";
                         require "view/home.php";
                     } else {
@@ -144,6 +159,8 @@ function registerNewAccount($registerRequest)
 
 
 
+
+
 /* ################## PART: COSTUMER ACCOUNT ################## */
 
 function displayCustomerAccount()
@@ -169,7 +186,7 @@ function updateDataUser($updateDataRequest){
 
             if (checkCityZip($userCity, $userZip)) {
                 if (updateDataUserInDB($userName, $userFirstname, $userAddress, $userZip, $_SESSION['userEmailAddress'])) {
-                    createSession($userName, $userFirstname, $userAddress, $userZip, $userCity, $_SESSION['userEmailAddress']);
+                    createSessionCostumer($userName, $userFirstname, $userAddress, $userZip, $userCity, $_SESSION['userEmailAddress']);
                     $_GET['action'] = "displayCustomerAccount";
                     require "view/displayCustomerAccount.php";
                 } else {
@@ -201,7 +218,15 @@ function getPreviousOrders($userEmail){
     return getPreviousOrdersFromDB($userId);
 }
 
+function displayDetailsOrder($orderId){
 
+    require_once "model/model.php";
+
+    $detailsOrder = getAPreviousOrder($orderId);
+
+    require "view/displayDetailsOrder.php";
+
+}
 
 
 
@@ -214,7 +239,14 @@ function displayAlbumCD()
     $allArticles = getAlbumCD();
     $typeArticle = "Album CD";
 
-    require 'view/displayArticles.php';
+    if(@$_SESSION['userType'] == 'administrator'){
+        require 'view/displayArticlesAdministrator.php';
+    }
+    else{
+        require 'view/displayArticles.php';
+    }
+
+
 }
 
 function displayVinyles()
@@ -223,8 +255,24 @@ function displayVinyles()
     $allArticles = getVinyle();
     $typeArticle = "Vinyle";
 
-    require 'view/displayArticles.php';
+    if(@$_SESSION['userType'] == 'administrator'){
+        require 'view/displayArticlesAdministrator.php';
+    }
+    else{
+        require 'view/displayArticles.php';
+    }
 }
+
+function displayAddProduct()
+{
+    require 'view/displayAddProduct.php';
+}
+
+
+
+
+
+/* ################## PART: DETAILS ALBUM CD/VINYLE ################## */
 
 function displayArticleDetails($idArticle)
 {
@@ -236,13 +284,6 @@ function displayArticleDetails($idArticle)
     require 'view/displayDetailsProductCustomer.php';
 }
 
-function displayAddProduct()
-{
-    require 'view/displayAddProduct.php';
-}
-
-
-/* ################## PART: DETAILS ALBUM CD/VINYLE ################## */
 
 
 
@@ -257,37 +298,54 @@ function displayCart(){
 
 function updateCart($idArticle, $qtyWished){
 
+    $_SESSION['connexionRequiredError'] = false;
+    $articleAlreadyInCart = false;
+
+    if(isset($_SESSION['userEmail'])) {
 
 
-    require "model/model.php";
-    $articleResults = getAnArticle($idArticle);
-    $_SESSION['qtyError'] = false;
+        require "model/model.php";
+        $articleResults = getAnArticle($idArticle);
+        $_SESSION['qtyError'] = false;
 
 
-    if ($articleResults[0]['quantity'] > $qtyWished && $qtyWished != 0) {
+        if ($articleResults[0]['quantity'] >= $qtyWished && $qtyWished != 0) {
 
 
+            if (isset ($_GET['articleToUpdate'])) {
+                $_SESSION['cart'][$_GET['articleToUpdate']]['quantity'] = $qtyWished;
+            } else {
 
-        if (isset ($_GET['articleToUpdate'])) {
-            $_SESSION['cart'][$_GET['articleToUpdate']]['quantity'] = $qtyWished;
+                $addingArticleToCart = array('id' => $idArticle, 'articleType' => $articleResults[0]['name'], 'nameArticle' => $articleResults[0]['NameArticle'], 'nameArtist' => $articleResults[0]['NameArtist'], 'releaseYear' => $articleResults[0]['releaseYear'], 'quantity' => $qtyWished, 'price' => $articleResults[0]['price'], 'pathFileCover' => $articleResults[0]['pathFileCover']);
+                if (@isset($_SESSION['cart'])) {
+                    $i = 0;
+                    foreach ($_SESSION['cart'] as $result){
+                        if($result['id'] == $idArticle){
+                            $articleAlreadyInCart = true;
+                            $_SESSION['cart'][$i]['quantity'] += 1;
+                        }
+                        $i++;
+                    }
+                    if (!$articleAlreadyInCart) {
+                        array_push($_SESSION['cart'], $addingArticleToCart);
+                    }
+                } else {
+                    $_SESSION['cart'][0] = $addingArticleToCart;
+                }
+            }
+            $_GET['action'] = "displayCart";
+            displayCart();
         } else {
 
-
-            $addingArticleToCart = array('id' => $idArticle, 'articleType' => $articleResults[0]['name'], 'nameArticle' => $articleResults[0]['NameArticle'], 'nameArtist' => $articleResults[0]['NameArtist'], 'releaseYear' => $articleResults[0]['releaseYear'], 'quantity' => $qtyWished, 'price' => $articleResults[0]['price'], 'pathFileCover' => $articleResults[0]['pathFileCover']);
-            if (@isset($_SESSION['cart'])) {
-                array_push($_SESSION['cart'], $addingArticleToCart);
-            } else {
-                $_SESSION['cart'][0] = $addingArticleToCart;
-            }
+            $_SESSION['qtyError'] = true;
+            $_GET['action'] = "displayCart";
+            require "view/displayCart.php";
         }
-        $_GET['action'] = "displayCart";
-        displayCart();
     }
-    else {
-
-        $_SESSION['qtyError'] = true;
-        $_GET['action'] = "displayCart";
-        require "view/displayCart.php";
+    else{
+        $_GET['connexionRequiredError'] = true;
+        $_GET['action'] = "displayLogin";
+        require "view/displayLogin.php";
     }
 
 }
@@ -301,7 +359,6 @@ function deleteArticleFromCart($line){
 
 function deleteCart(){
     $_SESSION['cart']=array();
-    require "view/displayCart.php";
 }
 
 function confirmCart(){
@@ -315,6 +372,30 @@ function confirmCart(){
 
 
 
+/* ################## PART: ADMINISTRATOR ################## */
+
+function deleteArticleFromList($idArticle, $typeArticle){
+
+
+
+    $deleteResult = deleteArticleFromBD($idArticle);
+
+    if($deleteResult == true){
+        $deleteResult = 'succeed';
+    }
+    elseif ($deleteResult == false){
+        $deleteResult = 'failure';
+    }
+
+
+    if($typeArticle == 'Album CD'){
+        displayAlbumCD();
+    }
+    else{
+        displayVinyles();
+    }
+
+}
 
 
 

@@ -12,14 +12,14 @@ $titre="Art-Music - ". $typeArticle;
 ?>
 
     <div style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;padding-top: 25px;padding-bottom: 25px;min-height: 750px;">
-        <div class="container">
+        <div class="container rounded">
             <div class="row">
                 <?php
 
                 foreach ($allArticles as $result):
                 ?>
-                <div class="col-md-4">
-                    <div class="text-center shadow" style="background-color: #eeeeee;padding-top: 10px;padding-bottom: 10px;margin-bottom: 25px;padding-right: 10px;padding-left: 10px;"><img style="margin-bottom: 15px;max-width: 180px;" src="<?=$result['pathFileCover'];?>" width="100%">
+                <div class="col-md-4" style="display: flex">
+                    <div class="text-center shadow" style="background-color: #eeeeee;padding-top: 10px;padding-bottom: 10px;margin-bottom: 25px;padding-right: 10px;padding-left: 10px; display: grid; width: 100%"><img class="rounded" style="margin-bottom: 15px;max-width: 180px; margin-left: auto; margin-right: auto;" src="view/content/images/covers/<?=$result['id'];?><?=$result['NameArticle'];?>.jpg" width="100%">
                         <ul class="list-unstyled text-left" style="font-style: normal;">
                             <li>Album: <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><strong><?=$result['NameArticle'];?></strong></a></li>
                             <li>Artiste: <strong><?=$result['NameArtist'];?></strong></li>
@@ -37,9 +37,7 @@ $titre="Art-Music - ". $typeArticle;
                     <?php endif ?>
                     </div>
                 </div>
-                <?php
-                endforeach;
-                ?>
+                <?php endforeach; ?>
 
             </div>
         </div>
