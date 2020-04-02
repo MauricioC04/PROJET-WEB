@@ -10,6 +10,7 @@
   }
 }
 
+
 @media (min-width: 768px) {
   #colDroite {
     margin-bottom: inherit !important;
@@ -18,21 +19,6 @@
 
 #colgauche {
   padding-top: 20px;
-}
-
-@media (min-width: 768px) {
-  #blockRows {
-    min-height: 800px;
-  }
-}
-
-@media (min-width: 768px) {
-  #containerBlock {
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -71,7 +57,7 @@
   }
 }
 
-@media (min-width: 300px) {
+@media (min-width: 100px) {
   #btnDesktop {
     display: none;
   }
@@ -140,11 +126,28 @@
   }
 }
 
-
-
-
 #imgProduct {
 
   margin-bottom: 15px;
   margin-right: 10px;
 }
+
+.inputStyle{
+  border: none;
+  border-bottom: 1px solid grey;
+  background: transparent;
+  margin-bottom: 2rem;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.customFileInput{
+  height: 31px;
+  padding: 5px;
+  background-color: #0066dd;
+  color: #dddbdc;
+  margin-right: 5px;
+  border-radius:28px;
+  cursor: pointer;
+}
+

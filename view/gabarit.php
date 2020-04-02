@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="view/content/styles/styles.css">
     <link rel="stylesheet" href="view/content/styles/custom.css">
 
+    <link rel="icon" href="view/content/images/icons/favicon.svg" type="image/x-icon">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script>
@@ -39,7 +41,7 @@
 <body style="height: 100%" onload="myFunction()">
 <nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background-color: rgb(0,0,0);">
     <div class="container">
-        <a class="navbar-brand" href="index.php?action=home" style="color: rgb(0,194,255);">ART-MUSIC</a>
+        <a class="navbar-brand" href="index.php?action=home" style="color: rgb(0,194,255);">ART-MUSIC</a><?php if (@$_SESSION['userType'] == 'administrator') :?><span style="color: white; font-size: small">Administrateur</span><?php endif ?>
         <button data-toggle="collapse" class="navbar-toggler custom-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav ml-auto text-right">

@@ -9,8 +9,12 @@
 
 function home()
 {
+
     require 'view/home.php';
 }
+
+
+
 
 
 /* ################## PART: LOGIN/SUBSCRIPTION ################## */
@@ -87,7 +91,6 @@ function logout(){
     $_GET['action'] = "home";
     require "view/home.php";
 }
-
 
 function displaySubscription()
 {
@@ -230,6 +233,8 @@ function displayDetailsOrder($orderId){
 
 
 
+
+
 /* ################## PART: ALBUM CD/VINYLES ################## */
 
 function displayAlbumCD()
@@ -263,11 +268,6 @@ function displayVinyles()
     }
 }
 
-function displayAddProduct()
-{
-    require 'view/displayAddProduct.php';
-}
-
 
 
 
@@ -281,7 +281,7 @@ function displayArticleDetails($idArticle)
     $detailsArticle = getDetailsArticle($idArticle);
     $numberOfMusics = getNumbersOfMusics($idArticle);
 
-    require 'view/displayDetailsProductCustomer.php';
+    require 'view/displayDetailsArticle.php';
 }
 
 
@@ -372,33 +372,386 @@ function confirmCart(){
 
 
 
+
+
 /* ################## PART: ADMINISTRATOR ################## */
 
-function deleteArticleFromList($idArticle, $typeArticle){
+function displayAddArticle($typeArticleGET)
+{
+    require"model/model.php";
+    $typeArticle = $typeArticleGET;
+    $allGenresMusic = getAllGenresMusic();
+    $allCountries = getAllCoutries();
+    $allVinyleFormats = getAllVinyleFormats();
+
+    require 'view/displayAddUpdateArticle.php';
+}
+
+function displayUpdateArticle($typeArticleGET, $idArticle){
+    require"model/model.php";
+    $typeArticle = $typeArticleGET;
+    $allGenresMusic = getAllGenresMusic();
+    $allCountries = getAllCoutries();
+    $allVinyleFormats = getAllVinyleFormats();
+    @$infosArticle = getAnArticle($idArticle);
+
+    require 'view/displayAddUpdateArticle.php';
+}
+
+function addNewArticle($newArticleRequest){
+
+    require "model/model.php";
+
+    $typeArticle = $newArticleRequest['typeArticle'];
+    $nameArticle = $newArticleRequest['nameArticle'];
+    $nameArtist = $newArticleRequest['nameArtist'];
+    $origineArtist = $newArticleRequest['origineArtist'];
+    $genreMusic = $newArticleRequest['genreMusic'];
+    $nameLabel = $newArticleRequest['nameLabel'];
+    $quantity = $newArticleRequest['quantity'];
+    $price = $newArticleRequest['price'];
+    $releaseYear = $newArticleRequest['releaseYear'];
+    $vinyleFormat = @$newArticleRequest['vinyleFormat'];
 
 
+    if(insertNewArticle($typeArticle, $nameArticle, $nameArtist, $origineArtist, $genreMusic, $nameLabel, $quantity, $price, $releaseYear, $vinyleFormat)){
 
-    $deleteResult = deleteArticleFromBD($idArticle);
+        $_GET['uploadCoverError'] = false;
+        $_GET['insertNewArticleError'] = false;
 
-    if($deleteResult == true){
-        $deleteResult = 'succeed';
-    }
-    elseif ($deleteResult == false){
-        $deleteResult = 'failure';
-    }
+        $idArticle = getIdArticle($nameArticle, $releaseYear);
+
+        $target_dir = "view/content/images/covers/";
+        $target_file = $target_dir.$idArticle.'.jpg';
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            $_GET['uploadCoverError'] = true;
+            displayAddArticle($typeArticle);
+
+        } else {
+            if (move_uploaded_file($_FILES['coverInput']["tmp_name"], $target_file)) {
+
+            } else {
+                $_GET['uploadCoverError'] = true;
+                displayAddArticle($typeArticle);
+            }
+        }
+
+        if($typeArticle == 'Album CD'){
+            $_GET['action'] = 'displayAlbumCD';
+            displayAlbumCD();
+        }
+        else{
+            $_GET['action'] = 'displayVinyles';
+            displayVinyles();
+        }
 
 
-    if($typeArticle == 'Album CD'){
-        displayAlbumCD();
     }
     else{
-        displayVinyles();
+        $_GET['insertNewArticleError'] = true;
+        displayAddArticle($typeArticle);
+    }
+
+
+
+}
+
+function updateArticle($updateArticleRequest){
+
+
+
+    require "model/model.php";
+
+    $typeArticle = $updateArticleRequest['typeArticle'];
+    $nameArticle = $updateArticleRequest['nameArticle'];
+    $idArticle = $updateArticleRequest['idArticle'];
+    $nameArtist = $updateArticleRequest['nameArtist'];
+    $origineArtist = $updateArticleRequest['origineArtist'];
+    $genreMusic = $updateArticleRequest['genreMusic'];
+    $nameLabel = $updateArticleRequest['nameLabel'];
+    $quantity = $updateArticleRequest['quantity'];
+    $price = $updateArticleRequest['price'];
+    $releaseYear = $updateArticleRequest['releaseYear'];
+    $vinyleFormat = @$updateArticleRequest['vinyleFormat'];
+
+    if(updateArticleBD($typeArticle, $idArticle, $nameArticle, $nameArtist, $origineArtist, $genreMusic, $nameLabel, $quantity, $price, $releaseYear, $vinyleFormat)) {
+
+
+        if($_FILES['coverInput']['name'] != ""){
+
+            $_GET['uploadCoverError'] = false;
+            $_GET['insertNewArticleError'] = false;
+
+
+            $fileToDelete = 'view/content/images/covers/'.$idArticle.'.jpg';
+
+            if (!unlink($fileToDelete)) {
+                $_GET['uploadCoverError'] = true;
+                displayAddArticle($typeArticle);
+            }
+
+
+
+            $target_dir = "view/content/images/covers/";
+            $target_file = $target_dir.$idArticle.'.jpg';
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+
+                $uploadOk = 0;
+            }
+
+            if ($uploadOk == 0) {
+                $_GET['removeCoverError'] = true;
+                displayAddArticle($typeArticle);
+
+            } else {
+                if (move_uploaded_file($_FILES['coverInput']["tmp_name"], $target_file)) {
+
+                } else {
+                    $_GET['uploadCoverError'] = true;
+                    displayAddArticle($typeArticle);
+                }
+            }
+        }
+
+
+        if ($typeArticle == 'Album CD') {
+            $_GET['action'] = 'displayAlbumCD';
+            displayAlbumCD();
+        } else {
+            $_GET['action'] = 'displayVinyles';
+            displayVinyles();
+        }
+
+
+    }
+
+    else{
+        $_GET['updateArticleError'] = true;
+        displayAddArticle($typeArticle);
+    }
+}
+
+function deleteArticle($idArticle, $typeArticle){
+
+    $_GET['deleteArticleError'] = false;
+    $_GET['deleteCoverError'] = false;
+
+    require "model/model.php";
+
+    if(deleteArticleBD($idArticle)){
+
+        $fileToDelete = 'view/content/images/covers/'.$idArticle.'.jpg';
+
+        if (!unlink($fileToDelete)) {
+            if ($typeArticle == 'Album CD') {
+                $_GET['deleteCoverError'] = true;
+                $_GET['action'] = 'displayAlbumCD';
+                displayAlbumCD();
+            } else {
+                $_GET['deleteCoverError'] = true;
+                $_GET['action'] = 'displayVinyles';
+                displayVinyles();
+            }
+        }
+        else {
+            if ($typeArticle == 'Album CD') {
+                $_GET['action'] = 'displayAlbumCD';
+                displayAlbumCD();
+            } else {
+                $_GET['action'] = 'displayVinyles';
+                displayVinyles();
+            }
+        }
+
+
+    }
+    else{
+        if ($typeArticle == 'Album CD') {
+            $_GET['deleteArticleError'] = true;
+            $_GET['action'] = 'displayAlbumCD';
+            displayAlbumCD();
+        } else {
+            $_GET['deleteArticleError'] = true;
+            $_GET['action'] = 'displayVinyles';
+            displayVinyles();
+        }
     }
 
 }
 
 
 
+function displayAddMusic($idArticle){
+
+    require_once "model/model.php";
+    $infosArticle = getAnArticle($idArticle);
+    require 'view/displayAddUpdateMusic.php';
+
+}
+
+function displayUpdateMusic($idMusic, $idArticle){
+    require 'model/model.php';
+
+    $infosArticle = getAnArticle($idArticle);
+    $infosMusic = getInfosMusic($idMusic);
+
+    require 'view/displayAddUpdateMusic.php';
+}
+
+function addNewMusic($newMusicRequest){
+
+
+    require "model/model.php";
+
+    $title = $newMusicRequest['title'];
+    $duration = $newMusicRequest['duration'];
+    $idArticle = $newMusicRequest['idArticle'];
+    $typeArticle = $newMusicRequest['typeArticle'];
+
+
+
+    if(insertNewMusic($title, $duration, $idArticle)){
+
+        $idMusic = getIdMusic($title, $idArticle);
+
+        $_GET['uploadMusicError'] = false;
+        $_GET['insertNewMusicError'] = false;
+
+        $target_dir = "view/content/musics/";
+        $target_file = $target_dir.$idMusic.$title.'.mp3';
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        if($imageFileType != "mp3") {
+            echo "Sorry, only mp3 files are allowed.";
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            $_GET['uploadMusicError'] = true;
+            displayAddMusic($typeArticle);
+
+        }
+        else {
+            if (move_uploaded_file($_FILES['musicInput']["tmp_name"], $target_file)) {
+
+            } else {
+
+                $_GET['uploadMusicError'] = true;
+                displayAddMusic($typeArticle);
+            }
+        }
+
+        displayArticleDetails($idArticle);
+    }
+    else{
+
+        $_GET['insertNewMusicError'] = true;
+        displayAddMusic($idArticle);
+    }
+}
+
+function updateMusic($updateMusicRequest){
+
+    $_GET['updateMusicError'] = false;
+
+    require "model/model.php";
+
+    $idMusic = $updateMusicRequest['idMusic'];
+    $actualTitle = getTitleMusic($idMusic);
+    $newTitle = $updateMusicRequest['title'];
+    $duration = $updateMusicRequest['duration'];
+    $idArticle = $updateMusicRequest['idArticle'];
+    $typeArticle = $updateMusicRequest['typeArticle'];
+
+    if(updateMusicBD($newTitle, $duration, $idMusic)){
+        if($_FILES['musicInput']['name'] != ""){
+
+            $fileToDelete = 'view/content/musics/'.$idMusic.$actualTitle.'.mp3';
+
+            if (!unlink($fileToDelete)) {
+                $_GET['uploadCoverError'] = true;
+                displayAddArticle($typeArticle);
+            }
+
+            $_GET['uploadMusicError'] = false;
+            $_GET['insertNewMusicError'] = false;
+
+            $target_dir = "view/content/musics/";
+            $target_file = $target_dir.$idMusic.$newTitle.'.mp3';
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            if($imageFileType != "mp3") {
+                echo "Sorry, only mp3 files are allowed.";
+                $uploadOk = 0;
+            }
+
+            if ($uploadOk == 0) {
+                $_GET['uploadMusicError'] = true;
+                displayAddMusic($typeArticle);
+
+            }
+            else {
+                if (move_uploaded_file($_FILES['musicInput']["tmp_name"], $target_file)) {
+
+                } else {
+
+                    $_GET['uploadMusicError'] = true;
+                    displayAddMusic($typeArticle);
+                }
+            }
+            displayArticleDetails($idArticle);
+        }
+        else{
+            $oldNameFile = 'view/content/musics/'.$idMusic.$actualTitle.'.mp3';
+            $newNameFile = 'view/content/musics/'.$idMusic.$newTitle.'.mp3';
+
+            rename($oldNameFile, $newNameFile);
+            displayArticleDetails($idArticle);
+        }
+
+    }
+    else{
+        $_GET['updateMusicError'] = true;
+        displayArticleDetails($idArticle);
+    }
+
+}
+
+function deleteMusic($idMusic, $titleMusic ,$idArticle){
+
+    $_GET['deleteMusicError'] = false;
+
+    require "model/model.php";
+
+    if(deleteMusicBD($idMusic)){
+
+        $fileToDelete = 'view/content/musics/'.$idMusic.$titleMusic.'.mp3';
+
+        if (!unlink($fileToDelete)) {
+            $_GET['removeCoverError'] = true;
+            displayArticleDetails($idArticle);
+        }
+        else {
+            $_GET['removeCoverError'] = false;
+            displayArticleDetails($idArticle);
+        }
+    }
+    else{
+        $_GET['deleteMusicError'] = true;
+        displayArticleDetails($idArticle);
+    }
+
+
+}
 
 
 

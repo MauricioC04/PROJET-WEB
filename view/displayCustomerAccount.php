@@ -11,11 +11,11 @@ $titre="Art-Music - Compte client";
 ?>
 
 
-    <div id="blockRows" style="padding: 20px;background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;position: relative;">
-        <div class="container border rounded" id="containerBlock" style="background-color: #f2f5f8;padding: 15px;">
+    <div id="blockRows" class="pt-4 pb-4 pr-2 pl-2 pr-sm-3 pl-sm-3 pr-md-4 pl-md-4" style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat; display: flex; align-items: center; min-height: 800px">
+        <div class="container border rounded pt-3 pb-3 p-1 p-sm-4" id="containerBlock" style="background-color: #f2f5f8;">
             <div class="row">
-                <div class="col-md-12">
-                    <h2>Compte client - Mme/M. <?=$_SESSION['userFirstname']; ?> <?=$_SESSION['userName']; ?></h2>
+                <div class="col-md-12" style="margin-bottom: 15px">
+                    <h2>Compte client</br>Mme/M. <?=$_SESSION['userFirstname']; ?> <?=$_SESSION['userName']; ?></h2>
                 </div>
             </div>
             <div class="row">
@@ -31,25 +31,25 @@ $titre="Art-Music - Compte client";
                         <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Veuillez remplir tous les champs correctement</span></h5>
                     <?php endif ?>
                     <form method="post" action="index.php?action=updateDataUser">
-                        <label style="margin-top: 5px;margin-bottom: 3px;">Nom</label><input class="form-control d-block" type="text" style="width: 100%;" value="<?=$_SESSION['userName']; ?>" name="name">
-                        <label style="margin-top: 5px;margin-bottom: 3px;">Prénom</label><input class="form-control d-block" type="text" style="width: 100%;" value="<?=$_SESSION['userFirstname']; ?>" name="firstname">
-                        <label style="margin-top: 5px;margin-bottom: 3px;">Adresse</label><input class="form-control d-block" type="text" style="width: 100%;" value="<?=$_SESSION['userAddress']; ?>" name="address">
+                        <input class="d-block d-block inputStyle" type="text" style="width: 100%; margin-top: 25px" placeholder="Nom" value="<?=$_SESSION['userName']; ?>" name="name">
+                        <input class="d-block d-block inputStyle" type="text" style="width: 100%;" placeholder="Prénom" value="<?=$_SESSION['userFirstname']; ?>" name="firstname">
+                        <input class="d-block d-block inputStyle" type="text" style="width: 100%;" placeholder="Adresse" value="<?=$_SESSION['userAddress']; ?>" name="address">
                         <div class="d-flex flex-row justify-content-between" style="width: 100%;">
-                            <div><label style="margin-top: 5px;margin-bottom: 3px;">NPA</label><input class="form-control" type="number" style="width: 90%;" value="<?=$_SESSION['userZip']; ?>" name="zip"></div>
-                            <div style="width: 90%;"><label style="margin-top: 5px;margin-bottom: 3px;">Localité</label><input class="form-control" type="text" style="width: 100%;" value="<?=$_SESSION['userCity']; ?>" name="city">
+                            <div><input class="d-block inputStyle" type="number" style="width: 90%;" placeholder="NPA" value="<?=$_SESSION['userZip']; ?>" name="zip"></div>
+                            <div style="width: 90%;"><input class="d-block inputStyle" type="text" style="width: 100%;" placeholder="Localité" value="<?=$_SESSION['userCity']; ?>" name="city">
                         </div>
 
                         </div>
-                        <button class="btn btn-primary" type="submit" style="width: 100%;margin-top: 20px;">Modifier mes données personnelles</button>
+                        <button class="btn btn-primary" type="submit" style="width: 100%;margin-top: 5px;">Modifier mes données personnelles</button>
                     </form>
                 </div>
-                <div class="col-lg-6" style="margin-top: 25px;">
+                <div class="col-lg-6 mt-4 mt-lg-0">
                     <h4>Vos précédentes commandes</h4>
                     <div class="border rounded-0" style="height: 315px; overflow: scroll;">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>N°</th>
+                                <th class="d-none d-md-table-cell">N°</th>
                                 <th style="min-width: 106px">Date</th>
                                 <th style="min-width: 110px">Montant</th>
                                 <th>Action</th>
@@ -59,7 +59,7 @@ $titre="Art-Music - Compte client";
                             <?php
                             foreach ($previousOrders as $result) : ?>
                                 <tr>
-                                    <td><?= $result['id']; ?></td>
+                                    <td class="d-none d-md-table-cell"><?= $result['id']; ?></td>
                                     <td><?= $result['orderDate']; ?></td>
                                     <td>CHF <?= $result['totalCost']; ?>.-</td>
                                     <td><a href="index.php?action=displayDetailsOrder&orderId=<?= $result['id']; ?>">Détails</a></td>

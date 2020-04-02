@@ -18,7 +18,7 @@ $titre="Art-Music - ".$typeArticle;
                 <h4>Liste des <?php if ($typeArticle == "Vinyle"):?>Vinyles<?php else :?>Albums CD<?php endif ?></h4>
             </div>
             <div class="col-md-3">
-                <button class="btn btn-primary" type="button" style="width: 100%; height: 50px">Ajouter un article</button>
+                <button class="btn btn-primary" type="button" style="width: 100%; height: 50px; margin-top: 15px" onclick="window.location.href = 'index.php?action=displayAddArticle&typeArticle=<?= $typeArticle?>';">Ajouter un article</button>
             </div>
         </div>
         <div class="row">
@@ -40,17 +40,17 @@ $titre="Art-Music - ".$typeArticle;
                         foreach ($allArticles as $result):
                         ?>
                         <tr style="padding-bottom: 15px; padding-top: 15px">
-                            <td>
+                            <td style="padding: 15px 0px 15px 0px">
                             <div style="display: flex; align-items: center;">
-                                <img src="<?= $result['pathFileCover']; ?>" style="max-width: 40%; margin-right: 10px">
-                                <div style="text-align: left">
-                                    <div><?= $result['NameArticle']; ?></div>
+                                <img class="rounded" src="view/content/images/covers/<?=$result['id'];?>.jpg" style="max-width: 45%; margin-right: 10px">
+                                <div style="text-align: left;">
+                                    <div><strong><?= $result['NameArticle']; ?></strong></div>
                                     <div><?= $result['NameArtist']?></div>
                                     <div><?= $result['quantity']?> unité(s)</div>
                                     <span><strong>CHF <?= $result['price']?></strong></span>
                                         <div style="display: flex; align-items: center; margin-top: 5px;">
-                                            <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><i class="fas fa-pen-square" style="font-size: xx-large;margin-right: 10px;"></i></a>
-                                            <a href="index.php?action=deleteArticleFromList&id=<?= $result['id']; ?>&typeArticle=<?= $typeArticle; ?>"><i class="fas fa-trash-alt" style="font-size: 28px; color: brown"></i></a>
+                                            <a href="index.php?action=displayUpdateArticle&id=<?= $result['id']; ?>&typeArticle=<?= $typeArticle; ?>"><i class="fas fa-pen-square" style="font-size: xx-large;margin-right: 10px;"></i></a>
+                                            <a href="index.php?action=deleteArticle&id=<?= $result['id']; ?>&typeArticle=<?= $typeArticle; ?>"><i class="fas fa-trash-alt" style="font-size: 28px; color: brown"></i></a>
                                         </div>
                                 </div>
                             </div>
@@ -102,9 +102,9 @@ $titre="Art-Music - ".$typeArticle;
                             <td class="desktopView"><?= $result['NameLabel'];?></td>
                             <td class="desktopView"><?= $result['quantity'];?></td>
                             <td class="desktopView"><?= $result['price'];?></td>
-                            <td class="desktopView"><div style="display: flex; align-items: center; justify-content: space-evenly; margin-top: 15px;">
-                                    <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><i class="fas fa-pen-square" style="font-size: x-large;margin-right: 10px;"></i></a>
-                                    <a href="index.php?action=deleteArticleFromCart&id=<?= $i-1; ?>"><i class="fas fa-trash-alt" style="font-size: x-large; color: brown"></i></a>
+                            <td class="desktopView"><div style="display: flex; align-items: center; justify-content: space-evenly;">
+                                    <a href="index.php?action=displayUpdateArticle&id=<?= $result['id']; ?>&typeArticle=<?= $typeArticle; ?>"><i class="fas fa-pen-square" style="font-size: x-large;margin-right: 10px;"></i></a>
+                                    <a href="index.php?action=deleteArticle&id=<?= $result['id']; ?>&typeArticle=<?= $typeArticle; ?>"><i class="fas fa-trash-alt" style="font-size: x-large; color: brown"></i></a>
                                 </div></td>
                         </tr>
                         <?php $i++; endforeach; ?>

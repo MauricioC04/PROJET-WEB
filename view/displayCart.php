@@ -11,7 +11,7 @@ $titre="Art-Music - Panier";
 ?>
 
 
-        <div class="d-flex align-items-center" id="mainBlock" style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);padding-top: 40px;padding-bottom: 40px;background-position: center;background-size: cover;background-repeat: no-repeat;padding-right: 0;padding-left: 0;">
+        <div class="d-flex align-items-center pt-4 pb-4 pr-2 pl-2 pr-sm-3 pl-sm-3 pr-md-4 pl-md-4" id="mainBlock" style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);padding-top: 40px;padding-bottom: 40px;background-position: center;background-size: cover;background-repeat: no-repeat;padding-right: 0;padding-left: 0;">
             <div class="container rounded" style="background-color: #f2f5f8;padding-right: 15px;padding-top: 15px;padding-bottom: 15px;padding-left: 15px;height: fit-content;">
                 <div class="row">
                     <div class="col-md-12" style="text-align: center">
@@ -45,7 +45,7 @@ $titre="Art-Music - Panier";
                                     <tr>
                                         <td>
                                             <div style="display: flex; align-items: center;">
-                                                <img src="<?= $result['pathFileCover']; ?>" style="max-width: 40%; margin-right: 10px">
+                                                <img src="view/content/images/covers/<?=$result['id'];?>.jpg" style="max-width: 40%; margin-right: 10px">
                                                 <div style="text-align: left">
                                                     <div><?= $result['articleType']; ?></div>
                                                     <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><div><?= $result['nameArticle']; ?></div></a>

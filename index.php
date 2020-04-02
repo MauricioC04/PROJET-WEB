@@ -34,8 +34,17 @@ if(isset($_GET['action'])){
         case'displayArticleDetails':
             displayArticleDetails($_GET['id']);
             break;
-        case'displayAddProduct':
-            displayAddProduct();
+        case'displayAddArticle':
+            displayAddArticle($_GET['typeArticle']);
+            break;
+        case'displayUpdateArticle':
+            displayUpdateArticle($_GET['typeArticle'], $_GET['id']);
+            break;
+        case'displayAddMusic':
+            displayAddMusic($_GET['idArticle']);
+            break;
+        case'displayUpdateMusic':
+            displayUpdateMusic($_GET['idMusic'], $_GET['idArticle']);
             break;
         case'displayCart':
             displayCart();
@@ -71,8 +80,24 @@ if(isset($_GET['action'])){
             confirmCart();
             break;
             /*ADMINISTRATOR*/
-        case 'deleteArticleFromList':
-            deleteArticleFromList($_GET['id'], $_GET['typeArticle']);
+
+        case 'addNewArticle':
+            addNewArticle($_POST);
+            break;
+        case 'updateArticle':
+            updateArticle($_POST);
+            break;
+        case 'deleteArticle':
+            deleteArticle($_GET['id'], $_GET['typeArticle']);
+            break;
+        case 'addNewMusic':
+            addNewMusic($_POST);
+            break;
+        case 'updateMusic':
+            updateMusic($_POST);
+            break;
+        case 'deleteMusic':
+            deleteMusic($_GET['idMusic'], $_GET['titleMusic'] ,$_GET['idArticle']);
             break;
 
         default:
