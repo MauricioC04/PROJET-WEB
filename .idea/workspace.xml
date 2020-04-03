@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9328f17-a7a4-4583-8c85-392f2d34ee99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view/content/images/icons/price.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/content/images/icons/stock.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controler/controler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controler/controler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/content/styles/Login-Form-Dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/Login-Form-Dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/content/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/content/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayAddUpdateArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayAddUpdateArticle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayAddUpdateMusic.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayAddUpdateMusic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayArticles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayArticlesAdministrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayArticlesAdministrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayCart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayConfirmationPurchase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayCustomerAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayCustomerAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayDetailsArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsArticle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayDetailsOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayDetailsOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayDetailsProductAdministrator.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displayLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displayLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/displaySubscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/displaySubscription.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +117,7 @@
       <workItem from="1585851868831" duration="6349000" />
       <workItem from="1585904312761" duration="16000" />
       <workItem from="1585905118531" duration="11000" />
-      <workItem from="1585906100603" duration="1697000" />
+      <workItem from="1585906100603" duration="2371000" />
     </task>
     <servers />
   </component>
@@ -165,22 +148,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584606238737" />
-    <state width="1877" height="84" key="GridCell.Tab.0.bottom" timestamp="1585858852493">
+    <state width="1877" height="84" key="GridCell.Tab.0.bottom" timestamp="1585916644457">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="84" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585858852493" />
-    <state width="1877" height="84" key="GridCell.Tab.0.center" timestamp="1585858852493">
+    <state width="1877" height="84" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585916644457" />
+    <state width="1877" height="84" key="GridCell.Tab.0.center" timestamp="1585916644457">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="84" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585858852493" />
-    <state width="1877" height="84" key="GridCell.Tab.0.left" timestamp="1585858852493">
+    <state width="1877" height="84" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585916644457" />
+    <state width="1877" height="84" key="GridCell.Tab.0.left" timestamp="1585916644457">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="84" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585858852493" />
-    <state width="1877" height="84" key="GridCell.Tab.0.right" timestamp="1585858852493">
+    <state width="1877" height="84" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585916644457" />
+    <state width="1877" height="84" key="GridCell.Tab.0.right" timestamp="1585916644457">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="84" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585858852493" />
+    <state width="1877" height="84" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585916644457" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584539260454">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

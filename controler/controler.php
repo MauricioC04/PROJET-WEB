@@ -309,10 +309,8 @@ function updateCart($idArticle, $qtyWished){
         $_SESSION['qtyError'] = false;
 
 
-        if ($articleResults[0]['quantity'] >= $qtyWished + @$_SESSION['cart'][] && $qtyWished != 0) {
+        if ($articleResults[0]['quantity'] >= $qtyWished && $qtyWished != 0) {
 
-
-            /**!!!!!!!!*/
 
             if (isset ($_GET['articleToUpdate'])) {
                 $_SESSION['cart'][$_GET['articleToUpdate']]['quantity'] = $qtyWished;
