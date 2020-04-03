@@ -15,6 +15,11 @@ $titre="Art-Music - Ajout d'un article";
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center"><i class="fa fa-plus-square" style="font-size: 45px;"></i><br>Ajout d'un <?= $typeArticle ?></h2>
+                <?php if (@$_GET['insertNewArticleError'] == true):?><h4 style="color: brown">Une erreur s'est produite lors de l'insertion d'un nouvel article</h4><?php endif ?>
+                <?php if (@$_GET['uploadCoverError'] == true):?><h4 style="color: brown">Une erreur s'est produite lors de l'upload de la couverture</h4><?php endif ?>
+                <?php if (@$_GET['removeCoverError'] == true):?><h4 style="color: brown">Une erreur s'est produite lors de la suppresion du fichier de couverture</h4><?php endif ?>
+                <?php if (@$_GET['updateArticleError'] == true):?><h4 style="color: brown">Une erreur s'est produite lors de la modification de l'article</h4><?php endif ?>
+
             </div>
         </div>
         <form action="index.php?action=<?php if ($_GET['action'] == 'displayUpdateArticle') :?>updateArticle<?php else :?>addNewArticle<?php endif ?>" method="POST" enctype="multipart/form-data">

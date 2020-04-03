@@ -14,12 +14,12 @@ $titre="Art-Music - Compte client";
     <div id="blockRows" class="pt-4 pb-4 pr-2 pl-2 pr-sm-3 pl-sm-3 pr-md-4 pl-md-4" style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat; display: flex; align-items: center; min-height: 800px">
         <div class="container border rounded pt-3 pb-3 p-1 p-sm-4" id="containerBlock" style="background-color: #f2f5f8;">
             <div class="row">
-                <div class="col-md-12" style="margin-bottom: 15px">
-                    <h2>Compte client</br>Mme/M. <?=$_SESSION['userFirstname']; ?> <?=$_SESSION['userName']; ?></h2>
+                <div class="col-md-12 pl-4 pr-4 pl-md-2 pr-md-2" style="margin-bottom: 15px">
+                    <h2>Compte client</br><span style="color: #214a80; font-weight: bold"><?=$_SESSION['userFirstname']; ?> <?=$_SESSION['userName']; ?></span></span></h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 p-4 p-md-0 pl-md-2 pr-md-2">
                     <h4>Données personnelles</h4>
                     <?php if (@$_GET['errorUpdate'] == true) :?>
                         <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Un problème est survenu lors de la modification des données.</span></h5>

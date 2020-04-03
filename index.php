@@ -80,7 +80,6 @@ if(isset($_GET['action'])){
             confirmCart();
             break;
             /*ADMINISTRATOR*/
-
         case 'addNewArticle':
             addNewArticle($_POST);
             break;

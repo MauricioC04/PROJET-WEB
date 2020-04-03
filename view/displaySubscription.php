@@ -20,19 +20,19 @@ $titre="Art-Music - Inscription";
             <div class="col-sm-12">
                 <h2 class="text-center"><i class="fa fa-pencil-square" style="font-size: 45px;"></i><br>Inscription</h2>
                 <?php if (@$_GET['emailAlreadyExists'] == true) :?>
-                    <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Cet email est déjà utilisé. Veuillez vous connecter avec vos identifiants respectifs</span></h5>
+                    <h5 class="alert alert-danger text-center mb-4">Cet email est déjà utilisé. Veuillez vous connecter avec vos identifiants respectifs</h5>
                 <?php endif ?>
                 <?php if (@$_GET['emptyInput'] == true) :?>
-                    <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Veuillez remplir tous les champs correctement</span></h5>
+                    <h5 class="alert alert-danger text-center mb-4">Veuillez remplir tous les champs correctement</h5>
                 <?php endif ?>
                 <?php if (@$_GET['passwordNotIdentical'] == true) :?>
-                    <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Vos mots de passe ne sont pas identique</span></h5>
+                    <h5 class="alert alert-danger text-center mb-4">Vos mots de passe ne sont pas identiques</h5>
                 <?php endif ?>
                 <?php if (@$_GET['errorRegister'] == true) :?>
-                    <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Un problème est survenu lors de votre inscription.</span></h5>
+                    <h5 class="alert alert-danger text-center mb-4">Un problème est survenu lors de votre inscription.</h5>
                 <?php endif ?>
                 <?php if (@$_GET['errorCityZip'] == true) :?>
-                    <h5 style="text-align: center"><span style="color: red; font-weight: bold;">Veuillez renseigner un code postale et une localité SUISSE</span></h5>
+                    <h5 class="alert alert-danger text-center mb-4">Veuillez renseigner un code postale et une localité SUISSE</h5>
                 <?php endif ?>
             </div>
         </div>

@@ -309,8 +309,10 @@ function updateCart($idArticle, $qtyWished){
         $_SESSION['qtyError'] = false;
 
 
-        if ($articleResults[0]['quantity'] >= $qtyWished && $qtyWished != 0) {
+        if ($articleResults[0]['quantity'] >= $qtyWished + @$_SESSION['cart'][] && $qtyWished != 0) {
 
+
+            /**!!!!!!!!*/
 
             if (isset ($_GET['articleToUpdate'])) {
                 $_SESSION['cart'][$_GET['articleToUpdate']]['quantity'] = $qtyWished;
@@ -423,25 +425,16 @@ function addNewArticle($newArticleRequest){
 
         $target_dir = "view/content/images/covers/";
         $target_file = $target_dir.$idArticle.'.jpg';
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        if($imageFileType != "jpg" && $imageFileType != "jpeg") {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
 
-        if ($uploadOk == 0) {
-            $_GET['uploadCoverError'] = true;
-            displayAddArticle($typeArticle);
 
-        } else {
+
             if (move_uploaded_file($_FILES['coverInput']["tmp_name"], $target_file)) {
 
             } else {
                 $_GET['uploadCoverError'] = true;
                 displayAddArticle($typeArticle);
             }
-        }
+
 
         if($typeArticle == 'Album CD'){
             $_GET['action'] = 'displayAlbumCD';
@@ -628,19 +621,8 @@ function addNewMusic($newMusicRequest){
 
         $target_dir = "view/content/musics/";
         $target_file = $target_dir.$idMusic.$title.'.mp3';
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        if($imageFileType != "mp3") {
-            echo "Sorry, only mp3 files are allowed.";
-            $uploadOk = 0;
-        }
 
-        if ($uploadOk == 0) {
-            $_GET['uploadMusicError'] = true;
-            displayAddMusic($typeArticle);
 
-        }
-        else {
             if (move_uploaded_file($_FILES['musicInput']["tmp_name"], $target_file)) {
 
             } else {
@@ -648,7 +630,7 @@ function addNewMusic($newMusicRequest){
                 $_GET['uploadMusicError'] = true;
                 displayAddMusic($typeArticle);
             }
-        }
+
 
         displayArticleDetails($idArticle);
     }

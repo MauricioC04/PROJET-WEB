@@ -30,13 +30,10 @@ $titre="Art-Music - Détails article";
                                     <i class="fas fa-compact-disc" style="font-size: 30px; vertical-align: sub"></i>
                                 <?php else :?>
                                 <img src="view/content/images/icons/album.svg" alt="pictogramme" style="width: 30px">
-                                <?php endif ?>&nbsp;&nbsp;<?=$result['name'];?></h6>
+                                <?php endif ?>&nbsp;&nbsp;<?=$result['name'];?><?php if ($result['name'] == 'Vinyle') :?> - <?=$result['NameFormatVinyle'];?><?php endif ?></h6>
                             <h6><img src="view/content/images/icons/nameAlbum.svg" alt="pictogramme" style="width: 30px">&nbsp;&nbsp;&nbsp;<?=$result['NameArticle'];?></h6>
                             <h6><img src="view/content/images/icons/microphone.svg" alt="pictogramme" style="width: 30px">&nbsp;&nbsp;&nbsp;<?=$result['NameArtist'];?></h6>
                             <h6><img src="view/content/images/icons/style.svg" alt="pictogramme" style="width: 30px">&nbsp;&nbsp;&nbsp;<?=$result['NameGenre'];?></h6>
-                            <?php if ($result['name'] == 'Vinyle') :?>
-                                    <h6><img src="view/content/images/icons/vinyleFormat.svg" alt="pictogramme" style="width: 30px">&nbsp;&nbsp;&nbsp;<?=$result['NameFormatVinyle'];?></h6>
-                            <?php endif ?>
                             <h6><img src="view/content/images/icons/releaseYear.svg" alt="pictogramme" style="width: 30px">&nbsp;&nbsp;&nbsp;<?=$result['releaseYear'];?></h6>
                             <h6><img src="view/content/images/icons/houseMusic.svg" alt="pictogramme" style="width: 30px; vertical-align: middle">&nbsp;&nbsp;&nbsp;<?=$result['NameLabel'];?></h6>
                             <h6><i class="material-icons" style="font-size: 30px; vertical-align: middle">queue_music</i>&nbsp;&nbsp;&nbsp;<?=$numberOfMusics[0][0];?> titres</h6>
@@ -71,6 +68,7 @@ $titre="Art-Music - Détails article";
                         </tr>
                         </thead>
                         <tbody>
+
                         <?php if (!empty($detailsArticle[0]['idMusic'])) :?>
                         <?php
 
@@ -85,18 +83,26 @@ $titre="Art-Music - Détails article";
 
                             <tr>
                                 <td class="align-middle"><?= $i; ?></td>
+
                                 <td class="align-middle"><?= $result['title']; ?></td>
+
                                 <td class="align-middle d-none" id="desktopCellDuration"><?= $result['duration']; ?></td>
-                                <audio id="music<?= $result['idMusic']; ?>" preload="none">
+
+                                <audio id="music<?= $result['idMusic']; ?>" preload="auto">
                                     <source  src="view/content/musics/<?= $result['idMusic']; ?><?= str_replace("+"," ", urldecode($result['title'])); ?>.mp3" type="audio/mpeg">
                                 </audio>
+
                                 <td class="align-middle" style="text-align: center"><i id="pButton<?= $result['idMusic']; ?>" class="fas fa-play-circle" style="font-size: xx-large; cursor: pointer" onclick="changeButton(<?= $result['idMusic']; ?>)"></i></td>
+
                                 <?php if (@$_SESSION['userType'] == 'administrator') :?>
                                 <td style="padding-right: 5px; width: 65px;">
+
                                     <div style="display: flex; flex-direction: column;">
                                         <a href="index.php?action=displayUpdateMusic&idMusic=<?= $result['idMusic']; ?>&idArticle=<?= $infosArticle[0]['id']; ?>"><i class="fas fa-pen-square" style="font-size: xx-large; width: 30px; margin-bottom: 10px"></i></a>
+
                                         <a href="index.php?action=deleteMusic&idMusic=<?= $result['idMusic']; ?>&titleMusic=<?= $result['title']; ?>&idArticle=<?= $infosArticle[0]['id']; ?>"><i class="fas fa-trash-alt" style="font-size: xx-large; width: 30px; color: brown"></i></a>
                                     </div>
+
                                 </td>
                                 <?php endif ?>
                             </tr>
@@ -120,19 +126,24 @@ $titre="Art-Music - Détails article";
         pageLoaded = true;
     }
 
-
     function changeButton(ab){
         if(pageLoaded) {
 
                 if (document.getElementById("pButton" + ab).className == "fas fa-play-circle") {
 
-                    var i;
 
-                    for(i = <?= $idStart; ?>; i < <?= $idEnd; ?>; i++){
-                        document.getElementById("pButton" + i).className = "";
-                        document.getElementById("pButton" + i).className = "fas fa-play-circle";
-                        document.getElementById("music" + i).pause();
-                    }
+                    var pButton = document.querySelectorAll('[id^="pButton"');
+                    var music = document.querySelectorAll('[id^="music"');
+
+                    pButton.forEach((x) =>{
+                        x.className = "";
+                        x.className = "fas fa-play-circle";
+                    });
+
+                    music.forEach((y) =>{
+                       y.pause();
+                    });
+
 
                     document.getElementById("pButton" + ab).className = "";
                     document.getElementById("pButton" + ab).className = "fas fa-pause-circle text-primary";
@@ -156,58 +167,6 @@ $titre="Art-Music - Détails article";
                 }
         }
     }
-
-    /*window.onload = function test1(){
-        console.log((document.getElementById("pButton1")));
-        test();
-    }
-
-
-        function test() {
-
-            for (i = 1; i < <?= $i; ?>; i++) {
-
-                document.getElementById("pButton" + i).onclick = changeButton;
-
-
-
-
-            }
-        }
-
-    function changeButton{
-        for (i = 1; i < <?= $i; ?>; i++) {
-            if (this.className == "fas fa-play-circle") {
-                this.className = "";
-                this.className = "fas fa-pause-circle";
-                document.getElementById("music" + i).play();
-            } else {
-                this.className = "";
-                this.className = "fas fa-play-circle";
-                document.getElementById("music" + i).pause();
-            }
-        }
-    }*/
-
-        /*function player(ab, cd) {
-            // start music
-            if (ab.paused) {
-                ab.play();
-                // remove play, add pause
-                cd.className = "";
-                cd.className = "fas fa-pause-circle";
-
-            }
-            else { // pause music
-                ab.pause();
-                // remove pause, add play
-                cd.className = "";
-                cd.className = "fas fa-play-circle";
-            }
-        }*/
-
-
-
 
 </script>
 

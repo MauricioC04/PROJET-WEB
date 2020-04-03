@@ -120,6 +120,27 @@
   }
 }
 
+@media (min-width: 992px) {
+  #mobileTableArticleAdmin {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  #desktopTableArticleAdmin {
+    display: inherit !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .containerArticlesAdmin {
+    max-width: 510px;
+  }
+}
+
+
+
+
 @media (min-width: 380px) {
   #desktopCellDuration {
     display: table-cell !important;

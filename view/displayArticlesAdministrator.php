@@ -11,29 +11,21 @@ $titre="Art-Music - ".$typeArticle;
 ?>
 
 <div class="d-flex align-items-center" id="mainBlock" style="background-image: url(&quot;view/content/images/useful/arriere-plan.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;padding: 20px;">
-    <div class="container rounded" style="background-color: #eeeeee;padding: 15px; height: fit-content;">
+    <div class="container rounded containerArticlesAdmin" style="background-color: #eeeeee;padding: 15px; height: fit-content;">
         <div class="row">
             <div class="col-md-9">
                 <h3>Compte administrateur</h3>
                 <h4>Liste des <?php if ($typeArticle == "Vinyle"):?>Vinyles<?php else :?>Albums CD<?php endif ?></h4>
             </div>
-            <div class="col-md-3">
-                <button class="btn btn-primary" type="button" style="width: 100%; height: 50px; margin-top: 15px" onclick="window.location.href = 'index.php?action=displayAddArticle&typeArticle=<?= $typeArticle?>';">Ajouter un article</button>
+            <div class="col-lg-3">
+                <button class="btn btn-primary" type="button" style="width: 100%; min-height: 50px; margin-top: 15px" onclick="window.location.href = 'index.php?action=displayAddArticle&typeArticle=<?= $typeArticle?>';">Ajouter un article</button>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12" style="margin-top: 25px;">
-                <div class="table-responsive text-center" id="mobileTable">
+                <div class="table-responsive text-center" id="mobileTableArticleAdmin">
                     <table class="table">
 
-                        <thead>
-                        <?php if(@$deleteResult == 'succeed'):?>
-                            <th style="color: darkgreen">L'article a correctement été supprimé</th>
-                        <?php endif ?>
-                        <?php if(@$deleteResult == 'failure'):?>
-                            <th style="color: brown">Une erreur est survenue lors de la suppression. Veuillez ressayer.</th>
-                        <?php endif ?>
-                        </thead>
                         <tbody>
                         <?php
 
@@ -42,7 +34,7 @@ $titre="Art-Music - ".$typeArticle;
                         <tr style="padding-bottom: 15px; padding-top: 15px">
                             <td style="padding: 15px 0px 15px 0px">
                             <div style="display: flex; align-items: center;">
-                                <img class="rounded" src="view/content/images/covers/<?=$result['id'];?>.jpg" style="max-width: 45%; margin-right: 10px">
+                                <img class="rounded" src="view/content/images/covers/<?=$result['id'];?>.jpg" style="width: 45%; max-width: 200px; margin-right: 10px">
                                 <div style="text-align: left;">
                                     <div><strong><?= $result['NameArticle']; ?></strong></div>
                                     <div><?= $result['NameArtist']?></div>
@@ -65,7 +57,7 @@ $titre="Art-Music - ".$typeArticle;
 
 
 
-                <div class="table-responsive d-none" id="desktopTable">
+                <div class="table-responsive d-none" id="desktopTableArticleAdmin">
                     <table class="table">
                         <thead>
                         <tr>
@@ -79,7 +71,7 @@ $titre="Art-Music - ".$typeArticle;
                             <?php endif ?>
                             <th class="desktopView">Label</th>
                             <th class="desktopView">Quantité</th>
-                            <th>Prix</th>
+                            <th class="text-right">Prix</th>
                             <th class="text-center">Action</th>
                         </tr>
                         </thead>

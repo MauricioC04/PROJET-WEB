@@ -20,7 +20,7 @@ $titre="Art-Music - Panier";
                         foreach ($_SESSION['cart'] as $result) : ?>
 
                             <?php $totalAmount+= $result['price']*$result['quantity']; endforeach ?>
-                        <h2 class="text-center"><i class="fas fa-shopping-cart" style="font-size: 45px;"></i><br>Votre confirmation d'achat - Montant total CHF <?= $totalAmount; ?></h2>
+                        <h2 class="text-center"><i class="fas fa-cart-arrow-down" style="font-size: 45px;"></i><br>Votre confirmation d'achat - Montant&#8239;total <span style="font-weight: bold; color: #214a80">CHF&#8239;<?= $totalAmount; ?></span></h2>
                     </div>
                 </div>
                 <div class="row">
@@ -36,7 +36,7 @@ $titre="Art-Music - Panier";
                                     <tr>
                                         <td>
                                             <div style="display: flex; align-items: center;">
-                                                <img src="view/content/images/covers/<?=$result['id'];?><?=$result['nameArticle'];?>.jpg" style="max-width: 40%; margin-right: 10px">
+                                                <img src="view/content/images/covers/<?=$result['id'];?>.jpg" onclick="window.location.href = 'index.php?action=displayArticleDetails&id=<?= $result['id']; ?>';" style="max-width: 40%; margin-right: 10px; cursor: pointer">
                                                 <div style="text-align: left">
                                                     <div><?= $result['articleType']; ?></div>
                                                     <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><div><?= $result['nameArticle']; ?></div></a>

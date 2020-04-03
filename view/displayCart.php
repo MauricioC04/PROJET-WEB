@@ -20,7 +20,7 @@ $titre="Art-Music - Panier";
                         foreach ($_SESSION['cart'] as $result) : ?>
 
                             <?php $totalAmount+= $result['price']*$result['quantity']; endforeach ?>
-                        <h2 class="text-center"><i class="fas fa-shopping-cart" style="font-size: 45px;"></i><br>Votre panier - Montant total CHF <?= $totalAmount; ?></h2>
+                        <h2 class="text-center"><i class="fas fa-shopping-cart" style="font-size: 45px;"></i><br>Votre panier - Montant total <span style="font-weight: bold; color: #214a80">CHF&#8239;<?= $totalAmount; ?></span></h2>
                         <?php if ($_SESSION['qtyError']):?>
                             <strong style="color: red">Quantité sélectionnée trop élevée ou inférieure à 1</strong></li>
                         <?php $_SESSION['qtyError'] = false; endif ?>
@@ -45,7 +45,7 @@ $titre="Art-Music - Panier";
                                     <tr>
                                         <td>
                                             <div style="display: flex; align-items: center;">
-                                                <img src="view/content/images/covers/<?=$result['id'];?>.jpg" style="max-width: 40%; margin-right: 10px">
+                                               <img src="view/content/images/covers/<?=$result['id'];?>.jpg" onclick="window.location.href = 'index.php?action=displayArticleDetails&id=<?= $result['id']; ?>';" style="max-width: 40%; margin-right: 10px; cursor: pointer"></a>
                                                 <div style="text-align: left">
                                                     <div><?= $result['articleType']; ?></div>
                                                     <a href="index.php?action=displayArticleDetails&id=<?= $result['id']; ?>"><div><?= $result['nameArticle']; ?></div></a>
@@ -104,7 +104,7 @@ $titre="Art-Music - Panier";
                                                 <div style="display: flex; align-items: center;">
                                                     <input class="form-control" type="hidden" value="updateCart" name="action"> <!-- BUG: With method GET if i put action=updateCart in URL of action form, it doesn't take the parameter action. But in method POST it works -->
                                                     <input class="form-control" type="hidden" value="<?= $result['id']; ?>" name="id">
-                                                    <input class="form-control" type="number" value="<?= $result['quantity']; ?>" name="quantityWished" style="margin-right: 10px">
+                                                    <input class="form-control" type="number" value="<?= $result['quantity']; ?>" name="quantityWished" style="margin-right: 10px; min-width: 65px">
                                                     <input class="form-control" type="hidden" value="<?= $i-1; ?>" name="articleToUpdate">
                                                     <button type="submit" id="cartButtonSubmit"><i class="fas fa-sync-alt" style="font-size: xx-large"></i></button>
                                                 </div>

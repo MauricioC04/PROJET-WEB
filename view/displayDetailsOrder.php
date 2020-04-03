@@ -36,7 +36,7 @@ $titre="Art-Music - Détails commande";
                                     <tr>
                                         <td>
                                             <div style="display: flex; align-items: center;">
-                                                <img src="view/content/images/covers/<?=$result['articleId'];?><?=$result['nameArticle'];?>.jpg" style="max-width: 40%; margin-right: 10px">
+                                                <img src="view/content/images/covers/<?=$result['articleId'];?>.jpg" style="max-width: 40%; margin-right: 10px">
                                                 <div style="text-align: left">
                                                     <div><?= $result['articleType']; ?></div>
                                                     <a href="index.php?action=displayArticleDetails&id=<?= $result['articleId']; ?>"><div><?= $result['nameArticle']; ?></div></a>
